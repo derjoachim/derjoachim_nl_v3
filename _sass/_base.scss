@@ -1,0 +1,134 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	color: $text-color;
+	font-family: $base-font-family;
+	font-size: $base-font-size;
+	font-weight: 200;
+	line-height: 24px;
+	overflow-x: hidden;
+
+	background: $background-color url(../assets/images/template/bg.gif) repeat-x top;
+
+	text-rendering: optimizelegibility;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: $headings-color;
+    letter-spacing: -1px;
+	font-weight: 200;
+	margin-bottom: 4px;
+
+	a {
+		color: $brand-primary;
+		&:hover {
+			color: darken($brand-primary,15);
+		}
+	}
+
+    small,
+    .small {
+        font-weight: normal;
+        line-height: 1;
+        color: $headings-small-color;
+    }
+}
+
+a {
+	@include transition(color 0.1s linear);
+	color: $link-color;
+	&:hover {
+		color: darken($link-color,15);
+	}
+}
+/**
+ * Grid
+ */
+div.container {
+	@include outer-container;
+	margin-bottom: (1.5 * $gutter);
+	//border: 1px solid $background-color;
+	//box-shadow: 0 0 8px darken($background-color, 10%); // @TODO
+}
+
+div.trigger, div.omega {
+	@include omega;
+}
+/**
+ * Le columns / spans / shifts
+ */
+.col1 {
+  @include span-columns(1);
+}
+
+.col2 {
+  @include span-columns(2);
+}
+
+.col3 {
+  @include span-columns(3);
+}
+
+.col4 {
+  @include span-columns(4);
+}
+
+.col5 {
+  @include span-columns(5);
+}
+
+.col6 {
+  @include span-columns(6);
+}
+
+.col7 {
+  @include span-columns(7);
+}
+
+.col8 {
+  @include span-columns(8);
+}
+
+.col9 {
+  @include span-columns(9);
+}
+
+.col10 {
+  @include span-columns(10);
+}
+
+.col11 {
+  @include span-columns(11);
+}
+
+.col12 {
+  @include span-columns(12);
+}
+
+.shift1 {
+	@include shift(1);
+}
+
+.shift2 {
+	@include shift(2);
+}
+
+.shift3 {
+	@include shift(3);
+}
+
+.shift4 {
+	@include shift(4);
+}
+
+.shift5 {
+	@include shift(5);
+}
+
+.shift6 {
+	@include shift(6);
+}
+

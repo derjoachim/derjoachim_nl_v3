@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,700,300' rel='stylesheet' type='text/css'>
+
+	<title>The magic of primary and unique keys</title>
+	<meta name="description" content="  One of the first things Nooku developers experience with Nooku Framework is the magic with database tables. It’s a redemption for Joomla developers that th...">
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://derjoachim.nl/blog/2011/11/the-magic-of-primary-and-unique-keys/">
+	<link rel="alternate" type="application/rss+xml" title="Der Joachim" href="http://derjoachim.nl/feed.xml" />
+	<script type="text/javascript">
+		/*
+		var _gaq = _gaq || [];
+ 	 	 _gaq.push(['_setAccount', 'UA-22946638-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			*/
+	</script>
+</head>
+
+	<body>
+		<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="/">Der Joachim</a>
+    <nav class="site-nav">
+      <div class="trigger">
+          
+          <a class="page-link" href="/blog/2011/11/the-magic-of-primary-and-unique-keys/">The magic of primary and unique keys</a>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+		<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">The magic of primary and unique keys</h1>
+    <p class="post-meta">Nov 10, 2011 • Gergo</p>
+  </header>
+
+  <article class="post-content">
+    <div>
+  One of the first things Nooku developers experience with Nooku Framework is the magic with database tables. It’s a redemption for Joomla developers that there is no need to create table classes which describe the tables’ structure. Nooku Framework is smart enough to deal with primary and unique keys out of the box. And to go further, it can handle composite keys too, which is rarely supported by other PHP frameworks.<br /> <strong> </strong>
+</div>
+
+
+
+
+<h3 dir="ltr">
+  It’s all in the schema
+</h3>
+
+
+<p>If primary and unique keys are properly defined in the database schema, it is possible to retrieve an item without writing any line of code. In com_harbour’s boats table, harbour_boat_id is a primary key, and slug is a unique key. It is possible to get the same boat by using any of these keys:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">option</span><span class="o">=</span><span class="nx">com_harbour</span><span class="o">&amp;</span><span class="nx">view</span><span class="o">=</span><span class="nx">boat</span><span class="o">&amp;</span><span class="nx">id</span><span class="o">=</span><span class="mi">4</span>
+<span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">option</span><span class="o">=</span><span class="nx">com_harbour</span><span class="o">&amp;</span><span class="nx">view</span><span class="o">=</span><span class="nx">boat</span><span class="o">&amp;</span><span class="nx">slug</span><span class="o">=</span><span class="nx">queen</span><span class="o">-</span><span class="nx">mary</span><span class="o">-</span><span class="mi">2</span></code></pre></div>
+
+
+<p>There is an important thing to note here. If an identity column exists (an auto increment key), the name &#8220;id&#8221; is used for it in the framework. So for example the column harbour_boat_id is accessed as $boat->id.</p>
+
+<p>  <h3 dir="ltr">
+    A look under the hood
+  </h3></p>
+
+<p>  <p>
+    Let’s look deep into how this works under the hood. In the first step, the database class fetches column and index information from the database. In the second step, the model requests the parsed information from the table class and creates a state for each key.
+  </p></p>
+
+<p>  <p>
+    <!--more-->
+  </p></p>
+
+<p>  <p>
+    In the model, states are inserted for primary and unique keys automatically. It uses KConfigState::insert, which accepts 5 parameters:
+  </p></p>
+
+<p>  <ul>
+    <li>
+      <strong>name</strong>: The name of the state, in this case the name of the column.
+    </li>
+    <li>
+      <strong>filter</strong>: Defines how the value should be validated and sanitized. This information is also fetched from the table schema. See KDatabaseAdapterMysqli::_typemap for how different types are mapped to filters.
+    </li>
+    <li>
+      <strong>default</strong>: The state’s default value. This is set to NULL by the model when primary and unique keys are inserted.
+    </li>
+    <li>
+      <strong>unique</strong>: It tells the state whether the variable is unique or not. In this case the value is obviously TRUE.
+    </li>
+    <li>
+      <strong>required</strong>: This fifth parameter is important in case of composite unique and primary keys. Composite keys consist of two or more columns. In this parameter, Nooku Framework stores the name of the other columns which belong to the key. This way, it can be easily validated if all states are set for a composite key.
+    </li>
+  </ul></p>
+
+<p>  <h3 dir="ltr">
+    Fetching a row
+  </h3></p>
+
+<p>  <p>
+    If the request is unique (it contains at least one unique state), Nooku Framework is able to fetch the row. The magic happens in KModelTable::_buildQueryWhere:
+  </p></p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$states</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">_state</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">getData</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$states</span><span class="p">))</span>
+<span class="p">{</span>
+    <span class="nv">$states</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">getTable</span><span class="p">()</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">mapColumns</span><span class="p">(</span><span class="nv">$states</span><span class="p">);</span>
+    <span class="k">foreach</span><span class="p">(</span><span class="nv">$states</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&amp;</span><span class="nx">gt</span><span class="p">;</span> <span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span><span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$value</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$query</span><span class="o">-&amp;</span><span class="nx">gt</span><span class="p">;</span><span class="nx">where</span><span class="p">(</span><span class="s1">&#39;tbl.&#39;</span><span class="o">.</span><span class="nv">$key</span><span class="p">,</span> <span class="s1">&#39;IN&#39;</span><span class="p">,</span> <span class="nv">$value</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></div>
+
+
+<p>  <p>
+    The 1st line requests the unique states from KConfigState. If there are any (3rd line), it iterates through them (6th line) and adds a WHERE statement to the query (9th line).
+  </p></p>
+
+<p>  <p>
+    As you can see, Nooku Framework does a powerful job in the background. It doesn’t require you to specify information that is already out there. With this magic, developers save a lot of time.
+  </p></p>
+
+<p>  <p>
+    In a next post we will dive deeper into foreign keys. Happy coding !
+  </p></p>
+
+  </article>
+
+</div>
+
+		<footer class="site-footer">
+
+</footer>
+
+	</body>
+</html>

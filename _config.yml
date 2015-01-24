@@ -1,0 +1,40 @@
+# Site settings
+title: Der Joachim
+subtitle: Geek, runner, motorcyclist, father, professional know-it-all.
+email: joachim@derjoachim.nl
+description: > # this means to ignore newlines until "baseurl:"
+  Weblog and personal website by Joachim van de Haterd, geek, runner,
+  motorcyclist, father and professional know-it-all.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://derjoachim.nl" # the base hostname & protocol for your site
+twitter_username: joachimvdhaterd
+github_username:  derjoachim
+linkedin_username: joachimvandehaterd
+
+# Sass config
+sass:
+    sass_dir: _sass
+    style: compressed
+
+# Dependencies
+markdown:         rdiscount
+highlighter:      pygments
+  
+# Permalinks
+permalink:        pretty
+   
+# Server
+destination:      _gh_pages
+
+# Blog
+permalink: "/blog/:year/:month/:title"
+paginate: 8
+paginate_path: "/blog/page:num"
+
+defaults:
+   - 
+    scope:
+        path: "" # an empty string here means all files in the project
+    values:
+        layout: "default"
+        author: "Joachim van de Haterd"

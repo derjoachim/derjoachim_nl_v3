@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,700,300' rel='stylesheet' type='text/css'>
+
+	<title>Welcome to derjoachim.nl</title>
+	<meta name="description" content="Weblog and personal website by Joachim van de Haterd, geek, runner, motorcyclist, father and professional know-it-all.
+">
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://derjoachim.nl/blog/page3/">
+	<link rel="alternate" type="application/rss+xml" title="Der Joachim" href="http://derjoachim.nl/feed.xml" />
+	<script type="text/javascript">
+		/*
+		var _gaq = _gaq || [];
+ 	 	 _gaq.push(['_setAccount', 'UA-22946638-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			*/
+	</script>
+</head>
+
+	<body>
+		<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="/">Der Joachim</a>
+    <nav class="site-nav">
+      <div class="trigger">
+          
+          <a class="page-link" href="/blog/page3/index.html">Welcome to derjoachim.nl</a>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+		<div itemscope itemtype="http://schema.org/CreativeWork/WebSite" class="container">
+	<div class="frontpage">
+		<span itemprop="description" style="display:none">Weblog and personal website by Joachim van de Haterd, geek, runner, motorcyclist, father and professional know-it-all.
+</span>
+		<h1 class="frontpage-header" itemprop="headline">Der Joachim</h1>
+		<h2 class="frontpage-subheader"itemprop="alternativeHeadline">Geek, runner, motorcyclist, father, professional know-it-all.</h2>
+	</div>
+	
+	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+		
+		<div class="col12">
+		
+			<header>
+				<h1 itemprop="headline">
+					<a class="blog_title" href="/blog/2012/01/getting-started-with-foreign-keys/">Getting started with foreign keys</a>
+				</h1>
+				
+			
+				<h3 class="blog_dateauthor">
+					<span itemprop="datePublished">31 January 2012</span> by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">Gergo</span></span>
+				</h3>
+			</header>
+			<section>
+				<p>  <p>
+    An often asked question on the Nooku Framework mailing list is how to deal with relations in databases. Nooku Framework doesn&#8217;t support relations out of the box yet, but fortunately the InnoDB engine in MySQL does!
+  </p></p>
+
+<p>  <p>
+    There are three important rules that must be met in order to create relations:
+  </p></p>
+
+<p>  <ol>
+    <li>
+      Both tables must be InnoDB tables and must not be TEMPORARY tables.
+    </li>
+    <li>
+      Keys must have similar internal data types.
+    </li>
+    <li>
+      Both foreign and referenced keys need to be indexed.
+    </li>
+  </ol></p>
+
+<p>  <h3 dir="ltr">
+    A basic example
+  </h3></p>
+
+<p>  <p>
+    Let&#8217;s see the basics through an example:
+  </p></p>
+
+<p>  <p>
+    Assume that we have an articles table with two columns: article_id and title. We have an authors table as well with the columns: author_id and name. Here is the SQL code for the tables:
+  </p></p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">articles</span><span class="o">`</span> <span class="p">(</span>
+<span class="o">`</span><span class="n">article_id</span><span class="o">`</span> <span class="nb">INT</span> <span class="n">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="o">`</span><span class="n">title</span><span class="o">`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">article_id</span><span class="o">`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="nb">CHARACTER</span> <span class="k">SET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span>
+<span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span> <span class="p">(</span>
+<span class="o">`</span><span class="n">author_id</span><span class="o">`</span> <span class="nb">INT</span> <span class="n">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+<span class="o">`</span><span class="n">name</span><span class="o">`</span> <span class="nb">VARCHAR</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">DEFAULT</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">author_id</span><span class="o">`</span><span class="p">)</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="nb">CHARACTER</span> <span class="k">SET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span></code></pre></div>
+
+
+<p>  <p>
+    We want to assign authors to articles. An author can belong to more than one articles, and an article can belong to more than one authors. So this is a many-to-many relation. That&#8217;s why we need a relation table too, which has article_id and author_id columns:
+  </p></p>
+
+<div class="highlight"><pre><code class="language-sql" data-lang="sql"><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">IF</span> <span class="k">NOT</span> <span class="k">EXISTS</span> <span class="o">`</span><span class="n">articles_authors</span><span class="o">`</span> <span class="p">(</span>
+<span class="o">`</span><span class="n">article_id</span><span class="o">`</span> <span class="nb">INT</span> <span class="n">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<span class="o">`</span><span class="n">author_id</span><span class="o">`</span> <span class="nb">INT</span> <span class="n">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span><span class="p">,</span>
+<span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">article_id</span><span class="o">`</span><span class="p">)</span>
+<span class="k">REFERENCES</span> <span class="o">`</span><span class="n">articles</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">article_id</span><span class="o">`</span><span class="p">)</span>
+<span class="k">ON</span> <span class="k">DELETE</span> <span class="k">CASCADE</span><span class="p">,</span>
+<span class="k">FOREIGN</span> <span class="k">KEY</span> <span class="p">(</span><span class="o">`</span><span class="n">author_id</span><span class="o">`</span><span class="p">)</span>
+<span class="k">REFERENCES</span> <span class="o">`</span><span class="n">authors</span><span class="o">`</span><span class="p">(</span><span class="o">`</span><span class="n">author_id</span><span class="o">`</span><span class="p">)</span>
+<span class="k">ON</span> <span class="k">DELETE</span> <span class="k">RESTRICT</span>
+<span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="nb">CHARACTER</span> <span class="k">SET</span><span class="o">=</span><span class="n">utf8</span><span class="p">;</span></code></pre></div>
+
+
+<p>  <p>
+    As you can see, we specified the foreign keys with CASCADE and RESTRICT options. Let’s try to delete an article. Notice that relations in the articles_authors table are deleted with it automatically. Now let’s try to remove an author. If the author is referenced in the relation table, then MySQL refuses to delete it. This ensures referential integrity.
+  </p></p>
+
+<p>  <h3 dir="ltr">
+    Keeping referential integrity
+  </h3></p>
+
+<p>  <p>
+    By using InnoDB, you can prevent accidental removal of referenced rows. Other than its roboust data management features, it has usability advantages too. For example some of the database management tools support foreign keys too. For example in Sequel Pro, an arrow is displayed next to the column’s value, and it takes you to the referenced row when you click on it. This little feature can be useful many times.
+  </p></p>
+
+<p>  <div>
+    <a title="foreignkeys by joomlatools, on Flickr" href="http://www.flickr.com/photos/joomlatools/6328763089/"><img src="http://farm7.static.flickr.com/6120/6328763089_2a1e7045a3_o.png" alt="foreignkeys" width="122" height="90" /></a>
+  </div></p>
+
+<p>  <p>
+    InnoDB has become the default engine in MySQL 5.5 and has many features over MyISAM. I am highly recommending every developer to consider using it in their applications.
+  </p></p>
+
+<p>  <p>
+    This was just a basic introduction to foreign keys, it is capable of much more! If you are interested, visit the <a href="http://dev.mysql.com/doc/refman/5.1/en/innodb-foreign-key-constraints.html">MySQL Reference Manual</a>.
+  </p></p>
+
+				<p>
+					<a class="blog_readmore" itemprop="url" href="/blog/2012/01/getting-started-with-foreign-keys/">Read more &raquo;</a>
+				</p>
+			</section>
+		</div>
+	</article>
+	<hr/>
+
+	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+		
+		<div class="col12">
+		
+			<header>
+				<h1 itemprop="headline">
+					<a class="blog_title" href="/blog/2012/01/onward-to-2012/">Onward to 2012</a>
+				</h1>
+				
+			
+				<h3 class="blog_dateauthor">
+					<span itemprop="datePublished">23 January 2012</span> by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">Johan</span></span>
+				</h3>
+			</header>
+			<section>
+				<div>
+  <p>
+    <span id="internal-source-marker_0.2972320301923901">The beginning of every new year gives pause for both retrospective and prospective thought. We celebrate the new year as we take a look back at the year that was and get a glimpse of the year that will be.</span>
+  </p>
+  
+  <h2>
+    Looking back at the year that was
+  </h2>
+  
+  <p>
+    <em>Creativity, Innovation and Inspiration</em> &#8211; three words I will remember best from 2011. The platitude “hard work pays off” rang true this past year with the great work done in our little project.  Nooku development literally <a href="http://blog.nooku.org/2011/05/nooku-development-at-warpspeed/#more-1493">moved ahead at warp-speed</a> in 2011.
+  </p>
+  
+  <h3>
+    Growing the Nooku Platform
+  </h3>
+  
+  <ul>
+    <li>
+      Nooku Framework <a href="http://blog.nooku.org/2011/07/nooku-07-alpha-3-released/">grew</a> <a href="http://blog.nooku.org/2011/10/nooku-07-alpha-4-released/">to</a> an awesome RESTful framework for web development and especially for rapid development of powerful custom Joomla solutions.
+    </li>
+    <li>
+      Nooku Server. We saw the birth of <a href="http://blog.nooku.org/2010/12/nooku-server-joomla-on-steroids/">Nooku Server</a>, a multi-site web application platform. Based on <a href="http://blog.nooku.org/2011/01/creating-a-diet-for-nooku-server/">lightened core </a>of Joomla 1.5 and <a href="http://blog.nooku.org/2011/01/nooku-server-loses-40-weight/">optimised for performance and scalability</a>.
+    </li>
+    <li>
+      Nooku Components. Lot’s of innovation happened with the development of <a href="http://nooku.assembla.com/spaces/nooku-components/wiki">new re-usable components:</a> <a href="http://blog.nooku.org/2011/08/meet-com_files-joomla-file-management-2-0/">com_files</a>, com_activities, com_debug, com_groups, &#8230;
+    </li>
+  </ul>
+</div>
+
+
+
+
+
+				<p>
+					<a class="blog_readmore" itemprop="url" href="/blog/2012/01/onward-to-2012/">Read more &raquo;</a>
+				</p>
+			</section>
+		</div>
+	</article>
+	<hr/>
+
+	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+		
+		<div class="col12">
+		
+			<header>
+				<h1 itemprop="headline">
+					<a class="blog_title" href="/blog/2011/12/impressions-from-nooku-jam-leuven/">Impressions from Nooku Jam Leuven</a>
+				</h1>
+				
+			
+				<h3 class="blog_dateauthor">
+					<span itemprop="datePublished">08 December 2011</span> by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">Myra</span></span>
+				</h3>
+			</header>
+			<section>
+				<p>  <p>
+    The recent Nooku Jam Leuven can be easily summed up in 2 words &#8211; <strong>incredibly inspiring</strong>!
+  </p></p>
+
+<p>  <p>
+    Twenty six <a href="https://twitter.com/#!/nooku/nj11leuven">attendees</a> discussed, collaborated and shared ideas on the 26th and 27th of November at the <a href="http://www.flandersdc.be/en">FlandersDC</a> Creativity Lab in Leuven, Belgium. The <a href="http://www.eventbrite.com/event/2326534728">Jam</a>, sponsored by <a href="http://www.moyoweb.nl/">Moyoweb</a>, <a href="http://beyounic.com/">Beyounic</a> and <a href="http://www.timble.net/">Timble</a>, was an inspiring weekend for the Nooku community.
+  </p></p>
+
+<p>  <p>
+    The recipe : great ideas, creative people, lots of food and Belgian beer and an inspiring venue! Check the <a href="http://www.flickr.com/photos/valanx/sets/72157628152971783/">photostream</a> of David Deutsch for the evidence of the inspiring weekend.
+  </p></p>
+
+<p>  <h3 dir="ltr">
+    Looking Back
+  </h3></p>
+
+<p>  <p>
+    One of the rules of the Nooku Jam is : “You blog about the Jam” and that’s exactly what some of the jammers did.
+  </p></p>
+
+<p>  <p>
+    
+				<p>
+					<a class="blog_readmore" itemprop="url" href="/blog/2011/12/impressions-from-nooku-jam-leuven/">Read more &raquo;</a>
+				</p>
+			</section>
+		</div>
+	</article>
+	<hr/>
+
+	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+		
+		<div class="col12">
+		
+			<header>
+				<h1 itemprop="headline">
+					<a class="blog_title" href="/blog/2011/12/nooku-jam-manila-2011/">Nooku Jam Manila 2011</a>
+				</h1>
+				
+			
+				<h3 class="blog_dateauthor">
+					<span itemprop="datePublished">06 December 2011</span> by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">Rey</span></span>
+				</h3>
+			</header>
+			<section>
+				<p>  <p>
+    Following up on the success of the <a href="http://blog.nooku.org/2010/10/jamming-in-manila-with-nooku/">first Asian Nooku Jam in Manila</a> last September 2010. This year’s jam, was held in the heart of one of Metro Manila’s CBDs &#8211; Ortigas, where we were kindly given the run of the TechBar in the headquarters of <a href="http://www.exist.com/">Exist Software Labs</a>.
+  </p></p>
+
+<p>  <h4 dir="ltr">
+    Jammers from all over
+  </h4></p>
+
+<p>  <p>
+    Demonstrating the global reach of Nooku, two of our Jammers hailed from the foothills of the gods &#8211; Nepal.  Nischal Pradhan, founder and CEO of a software development firm in Nepal that utilizes Nooku technology, was in Manila when he found out that Mr. Nooku himself was going to be in town, he and some of his team, jumped at the chance to be part of the Jam.
+  </p></p>
+
+<p>  <p>
+    The other 13 Jammers were local Filipino IT professionals mainly working for private commercial companies and the academe.
+  </p></p>
+
+<p>  <h4 dir="ltr">
+    Sticky notes
+  </h4></p>
+
+<p>  <p>
+    The Jam kicked off with a free form sticky note session, where participants wrote questions and ideas they were interested to find out about Nooku. The sticky notes were then posted on a whiteboard and Johan used this to structure the agenda for the day &#8211; very unconference style!
+  </p></p>
+
+<p>  <p>
+    
+				<p>
+					<a class="blog_readmore" itemprop="url" href="/blog/2011/12/nooku-jam-manila-2011/">Read more &raquo;</a>
+				</p>
+			</section>
+		</div>
+	</article>
+	<hr/>
+
+	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+		
+		<div class="col12">
+		
+			<header>
+				<h1 itemprop="headline">
+					<a class="blog_title" href="/blog/2011/12/behind-the-desk-or-in-front-of-the-best/">Behind the desk or in front of the best</a>
+				</h1>
+				
+			
+				<h3 class="blog_dateauthor">
+					<span itemprop="datePublished">01 December 2011</span> by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">Guest</span></span>
+				</h3>
+			</header>
+			<section>
+				<p><em>This is a guest post from Jelle Munk, of <a href="http://www.stoeldemunk.nl/">Stoel de Munk</a>, attendee of the Nooku Jam Leuven 2011.</em></p>
+
+<p>I was a web developer who worked anonymously behind my desk using open source software but I did not like where I was going:</p>
+
+<ul>
+<li>I did not share;</li>
+<li>I did not collaborate;</li>
+<li>I did not contribute code.</li>
+</ul>
+
+
+<p>Something had to change, I felt working with free and open source software was more than this.</p>
+
+<p><a href="http://www.flickr.com/photos/nooku/6435690291/" title="jelle-munk by Nooku, on Flickr"><img src="http://farm8.staticflickr.com/7169/6435690291_490410880d.jpg" alt="jelle-munk" width="500" height="287" /></a><br/>
+<em>Picture of Jelle from the <a href="http://www.flickr.com/photos/valanx/sets/72157628152971783/"> &#8216;Making Nerds Look Good&#8217; photostream</a> by <a href="https://twitter.com/skore_de">David Deutsch</a>.</em></p>
+
+<h3 dir="ltr">
+  Hello Community
+</h3>
+
+
+<p>I heard about the Nooku Framework and <a href="http://vimeo.com/channels/nooku">watched the talks </a>Johan has been giving about the framework. More importantly, what really got my attention was his philosophy about open source development.</p>
+
+<p>I saw an upcoming event called the &#8216;<a href="http://www.eventbrite.com/event/2326534728">Nooku Jam Leuven</a>&#8216; and felt it was a good way to force myself to learn more about open source. Taking the next step, I signed up!</p>
+
+
+				<p>
+					<a class="blog_readmore" itemprop="url" href="/blog/2011/12/behind-the-desk-or-in-front-of-the-best/">Read more &raquo;</a>
+				</p>
+			</section>
+		</div>
+	</article>
+	<hr/>
+
+	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+		
+		<div class="col12">
+		
+			<header>
+				<h1 itemprop="headline">
+					<a class="blog_title" href="/blog/2011/11/the-nooku-jam-comes-home-to-belgium/">The Nooku Jam comes home to Belgium!</a>
+				</h1>
+				
+			
+				<h3 class="blog_dateauthor">
+					<span itemprop="datePublished">21 November 2011</span> by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">Myra</span></span>
+				</h3>
+			</header>
+			<section>
+				<p>  <p>
+    The biggest Nooku Jam of the year is happening this weekend in Belgium. With the theme “Creativity, Innovation and Inspiration”, the Nooku jam is coming home (technically a few miles from Nooku HQ). <a href="http://www.eventbrite.com/event/2326534728">Nooku Jam Leuven</a> brings Nookuers from all over.
+  </p></p>
+
+<p>  <p>
+    Everyone who signed up for the Nooku Jam Leuven in the <a href="http://www.flandersdc.be/en">FlandersDC Creativity Lab</a> will be treated to a day of intense presentations, discussions, brainstorms, workshops, and hackathons around specific areas of the Nooku project.
+  </p></p>
+
+<p>  <h4 dir="ltr">
+    Dissecting the Nooku Jam
+  </h4></p>
+
+<p>  <p>
+    There always seems to be a Nooku Jam event in some part of the world. We have had Nooku Jams in three continents the past year! So what exactly happens in a jam?
+  </p></p>
+
+<p>  <p>
+    <a title="Nooku Jam Stockholm SE - February 2011 by Nooku, on Flickr" href="http://www.flickr.com/photos/nooku/5516536345/"><img src="http://farm6.staticflickr.com/5133/5516536345_085e09e578.jpg" alt="Nooku Jam Stockholm SE - February 2011" width="500" height="333" /></a>
+  </p></p>
+
+<p>  <p>
+    A Nooku Jam is an open, participatory workshop-event, whose content is provided by participants. The concept is very similar to a <a href="http://barcamp.org/w/page/405173/TheRulesOfBarCamp">barcamp</a>.
+  </p></p>
+
+<p>  <p>
+    
+				<p>
+					<a class="blog_readmore" itemprop="url" href="/blog/2011/11/the-nooku-jam-comes-home-to-belgium/">Read more &raquo;</a>
+				</p>
+			</section>
+		</div>
+	</article>
+	<hr/>
+
+	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+		
+		<div class="col12">
+		
+			<header>
+				<h1 itemprop="headline">
+					<a class="blog_title" href="/blog/2011/11/the-magic-of-primary-and-unique-keys/">The magic of primary and unique keys</a>
+				</h1>
+				
+			
+				<h3 class="blog_dateauthor">
+					<span itemprop="datePublished">10 November 2011</span> by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">Gergo</span></span>
+				</h3>
+			</header>
+			<section>
+				<div>
+  One of the first things Nooku developers experience with Nooku Framework is the magic with database tables. It’s a redemption for Joomla developers that there is no need to create table classes which describe the tables’ structure. Nooku Framework is smart enough to deal with primary and unique keys out of the box. And to go further, it can handle composite keys too, which is rarely supported by other PHP frameworks.<br /> <strong> </strong>
+</div>
+
+
+
+
+<h3 dir="ltr">
+  It’s all in the schema
+</h3>
+
+
+<p>If primary and unique keys are properly defined in the database schema, it is possible to retrieve an item without writing any line of code. In com_harbour’s boats table, harbour_boat_id is a primary key, and slug is a unique key. It is possible to get the same boat by using any of these keys:</p>
+
+<div class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">option</span><span class="o">=</span><span class="nx">com_harbour</span><span class="o">&amp;</span><span class="nx">view</span><span class="o">=</span><span class="nx">boat</span><span class="o">&amp;</span><span class="nx">id</span><span class="o">=</span><span class="mi">4</span>
+<span class="nx">index</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">option</span><span class="o">=</span><span class="nx">com_harbour</span><span class="o">&amp;</span><span class="nx">view</span><span class="o">=</span><span class="nx">boat</span><span class="o">&amp;</span><span class="nx">slug</span><span class="o">=</span><span class="nx">queen</span><span class="o">-</span><span class="nx">mary</span><span class="o">-</span><span class="mi">2</span></code></pre></div>
+
+
+<p>There is an important thing to note here. If an identity column exists (an auto increment key), the name &#8220;id&#8221; is used for it in the framework. So for example the column harbour_boat_id is accessed as $boat->id.</p>
+
+<p>  <h3 dir="ltr">
+    A look under the hood
+  </h3></p>
+
+<p>  <p>
+    Let’s look deep into how this works under the hood. In the first step, the database class fetches column and index information from the database. In the second step, the model requests the parsed information from the table class and creates a state for each key.
+  </p></p>
+
+<p>  <p>
+    
+				<p>
+					<a class="blog_readmore" itemprop="url" href="/blog/2011/11/the-magic-of-primary-and-unique-keys/">Read more &raquo;</a>
+				</p>
+			</section>
+		</div>
+	</article>
+	<hr/>
+
+	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+		
+		<div class="col12">
+		
+			<header>
+				<h1 itemprop="headline">
+					<a class="blog_title" href="/blog/2011/11/form-validation-with-nooku-framework/">Form validation with Nooku Framework</a>
+				</h1>
+				
+			
+				<h3 class="blog_dateauthor">
+					<span itemprop="datePublished">01 November 2011</span> by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">Stian</span></span>
+				</h3>
+			</header>
+			<section>
+				<p><a href="http://www.flickr.com/photos/nooku/6301887410/" title="Nooku Server - Form Validation by Nooku, on Flickr"><img src="http://farm7.static.flickr.com/6111/6301887410_911544b369.jpg" alt="Nooku Server - Form Validation" width="500" height="288" /></a></p>
+
+<p>Responsive validation feedback on forms is no longer a “nice to have” feature in modern web apps, it’s a standard that users have come to expect to be there.</p>
+
+<p>In Nooku Framework Alpha 3, we added a new API that loads the forms validation library in <a href="http://www.mootools.net/docs/more125/more/Forms/Form.Validator">MooTools More</a> for you. And we implemented it in Nooku Server Alpha 3 to improve the usability of refactored components.</p>
+
+<p>Today I’ll show you how easy it is to get started by simply adding CSS classes to your form inputs. Then I’ll show you how easy it is to create your <a href="http://www.mootools.net/docs/more125/more/Forms/Form.Validator.Extras">own input validators</a> for when you need to validate something custom.</p>
+
+
+				<p>
+					<a class="blog_readmore" itemprop="url" href="/blog/2011/11/form-validation-with-nooku-framework/">Read more &raquo;</a>
+				</p>
+			</section>
+		</div>
+	</article>
+	<hr/>
+
+</div>
+
+<div class="paginator col6 shift3">
+	<ul>
+	
+		<li><a href="/blog/page2">&laquo;</a></li>
+	
+
+	
+		
+			<li><a href="/index.html">1</a></li>
+		
+	
+		
+			<li><a href="/blog/page2">2</a></li>
+		
+	
+		
+			<li><span class="page-current">3</span></li>
+		
+	
+		
+			<li><a href="/blog/page4">4</a></li>
+		
+	
+		
+			<li><a href="/blog/page5">5</a></li>
+		
+	
+		
+			<li><a href="/blog/page6">6</a></li>
+		
+	
+		
+			<li><a href="/blog/page7">7</a></li>
+		
+	
+		
+			<li><a href="/blog/page8">8</a></li>
+		
+	
+		
+			<li><a href="/blog/page9">9</a></li>
+		
+	
+		
+			<li><a href="/blog/page10">10</a></li>
+		
+	
+		
+			<li><a href="/blog/page11">11</a></li>
+		
+	
+	
+	
+		<li><a href="/blog/page4">&raquo;</a></li>
+	
+	</ul>
+</div>
+
+
+		<footer class="site-footer">
+
+</footer>
+
+	</body>
+</html>

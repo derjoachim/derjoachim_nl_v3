@@ -1,0 +1,116 @@
+/**
+ * Pagination
+ **/
+.paginator {  
+	$base-border-color: $brand-primary !default;
+	$base-border-radius: 3px !default;
+	$base-spacing: 1.5em !default;
+	$base-link-color: $link-color !default;
+	$dark-gray: #333 !default;
+	$large-screen: em(860) !default;
+	$base-font-color: $dark-gray !default;
+  
+	ul {
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+	}
+  
+	$pagination-border-color: $base-border-color;
+	$pagination-border: 1px solid $pagination-border-color;
+	$pagination-background: lighten($pagination-border-color, 10);
+	$pagination-hover-background: lighten($pagination-background, 5);
+	$pagination-color: $text-color;
+
+	text-align: center;
+
+	ul {
+		display: inline;
+		text-align: center;
+
+		li {
+  	  	  display: inline;
+		}
+
+		ul li {
+			display: none;
+  
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				display: inline;
+			}
+
+			@include media($large-screen) {
+				display: inline;
+			}
+		}
+
+		li a {
+			@include transition (all 0.2s ease-in-out);
+			background: $pagination-background;
+			border-radius: $base-border-radius;
+			border: $pagination-border;
+			color: $pagination-color;
+			outline: none;
+			padding: ($base-spacing / 4) ($gutter / 2);
+
+			&:hover,
+			&:focus {
+				background: $pagination-hover-background;
+				color: $link-color;
+			}
+
+			&:active {
+				background: $pagination-background;
+			}
+		}
+
+		span.page-current {
+			background: $background-color;
+			border-radius: $base-border-radius;
+			border: $pagination-border;
+			outline: none;
+			padding: ($base-spacing / 4) ($gutter / 2);
+		}
+	}
+}
+
+/**
+ * Frontpage
+ */
+.frontpage {
+	@include span-columns(12);
+	@include omega();
+
+	border-bottom: 1px solid #f3f3f3;
+	background: url('../assets/images/template/header-image.jpg') no-repeat right 0;
+	min-height: 213px;
+}
+
+h1.frontpage-header {
+	font-size: 5em;
+	margin-left: 1em;
+	font-spacing: -2px;
+	color: $brand-primary;
+}
+h2.frontpage-subheader {
+	font-size: 1.2em;
+	font-style: italic;
+	color: $brand-primary;
+	margin-left: 1em;
+}
+
+/**
+ * Blog layout
+ */
+article {
+	margin: 1em;
+}

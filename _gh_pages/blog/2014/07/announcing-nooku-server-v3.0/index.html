@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en-US">
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,700,300' rel='stylesheet' type='text/css'>
+
+	<title>Announcing Nooku Server v3.0</title>
+	<meta name="description" content="As you've most likely found out by now, we are all big fans of [Vagrant][2]. Vagrant is the tool that powers our Nooku development environment and makes sure...">
+
+	<link rel="stylesheet" href="/css/main.css">
+	<link rel="canonical" href="http://derjoachim.nl/blog/2014/07/announcing-nooku-server-v3.0">
+	<link rel="alternate" type="application/rss+xml" title="Der Joachim" href="http://derjoachim.nl/feed.xml" />
+	<script type="text/javascript">
+		/*
+		var _gaq = _gaq || [];
+ 	 	 _gaq.push(['_setAccount', 'UA-22946638-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			*/
+	</script>
+</head>
+
+	<body>
+		<header class="site-header">
+  <div class="wrapper">
+    <a class="site-title" href="/">Der Joachim</a>
+    <nav class="site-nav">
+      <div class="trigger">
+          
+          <a class="page-link" href="/blog/2014/07/announcing-nooku-server-v3.0">Announcing Nooku Server v3.0</a>
+          
+      </div>
+    </nav>
+  </div>
+</header>
+
+		<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Announcing Nooku Server v3.0</h1>
+    <p class="post-meta">Jul 10, 2014 • Steven</p>
+  </header>
+
+  <article class="post-content">
+    <p>As you've most likely found out by now, we are all big fans of <a href="https://www.vagrantup.com">Vagrant</a>. Vagrant is the tool that powers our Nooku development environment and makes sure you can start coding right away by managing this virtual environment for you.</p>
+
+<p>We've launched the first Nooku Server box little more than a year ago. In good Nooku tradition, we have revised our approach more than once over the past year.</p>
+
+<!--more-->
+
+
+<h3>A little bit of history</h3>
+
+<p>The <a href="https://github.com/nooku/nooku-server/releases/tag/v1.0.0">v1.0 version</a> was a separate repository that required additional configuration before you could use it. You had to tell it where to find your Nooku Framework code first and then build the box yourself.</p>
+
+<p>To try and improve this workflow, we moved the Vagrant configuration into Nooku Framework itself and tagged it <a href="https://github.com/nooku/nooku-server/releases/tag/v2.0.0">v2.0</a>. Better, but not quite there yet: each time you clone the framework repository, you still had to build the box at first run. A time consuming process!</p>
+
+<p>Not to mention the fact that an updated version of PHP or MySQL could break our configuration, throw build errors all over the place and prevent you from getting a working box at all!</p>
+
+<h3>Vagrant Cloud to the rescue</h3>
+
+<p><img src="https://farm3.staticflickr.com/2900/14433258990_bac699b844_m.jpg" title="Vagrant Cloud" width="220" style="float: right; margin: 6px" /></p>
+
+<p>With the recent release of <a href="https://vagrantcloud.com/">Vagrant Cloud</a>, however, all these issues are now a thing of the past. <a href="https://vagrantcloud.com/">Vagrant Cloud</a> is a hosted service for finding and sharing Vagrant boxes, managing Vagrant Share, and much more.  For a complete introduction, head over to their original <a href="https://www.vagrantup.com/blog/vagrant-1-5-and-vagrant-cloud.html">release announcement</a>.</p>
+
+<p>We moved the Vagrant configuration back into the separate Nooku Server repository and tagged it <a href="https://github.com/nooku/nooku-server/releases/tag/v3.0.0">v3.0</a>. We now build the box once after each new release and publish it as <a href="https://vagrantcloud.com/nooku/box">nooku/box</a> on Vagrant Cloud.</p>
+
+<h3>Hassle-free coding</h3>
+
+<p>When you clone the Nooku Framework repository and run the <code>vagrant up</code> command, it will automatically download the latest build and you'll be up and coding in no time!</p>
+
+<p>Once you have downloaded the latest version, you'll never have to redownload again. All your new Nooku Framework projects will <em>just work</em> out of the box!</p>
+
+<p>And best of all: as soon as we release a new version, Vagrant will tell you about it the next time you fire up one of your projects. It doesn’t get any easier than this!</p>
+
+<p>All that’s left for you to do is to <a href="https://github.com/nooku/nooku-platform#installation">dive in</a> the code headfirst and have fun!</p>
+
+  </article>
+
+</div>
+
+		<footer class="site-footer">
+
+</footer>
+
+	</body>
+</html>
