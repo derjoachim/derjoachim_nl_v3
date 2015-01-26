@@ -9,36 +9,41 @@ title: Welcome to derjoachim.nl
 		<h2 class="frontpage-subheader"itemprop="alternativeHeadline">{{ site.subtitle }}</h2>
 	</div>
 	{% for post in paginator.posts %}
-	<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-		{% if post.image %}
-		<div class="col4">
-			<img class="blog_image" itemprop="image" alt="{{ post.title }}" src="{{ post.image }}" />
-		</div>
-		<div class="col8">
-		{% else %}
-		<div class="col12">
-		{% endif %}
-			<header>
-				<h1 itemprop="headline">
-					<a class="blog_title" href="{{ post.url }}">{{ post.title }}</a>
-				</h1>
-				{% if post.subtitle %}
-				<h2 class="blog_subtitle">{{ post.subtitle }}</h2>
-				{% endif %}
+	<div class="blog-preview">
+		<article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+			{% if post.image %}
+			<div class="blog-preview-img">
+				<img class="blog-image" itemprop="image" alt="{{ post.title }}" src="{{ post.image }}" />
+			</div>
+			<div class="blog-preview-twothirds">
+			{% else %}
+			<div class="blog-preview-fullwidth">
+			{% endif %}
+				<header>
+					<h1 itemprop="headline">
+						<a class="blog-title" href="{{ post.url }}">{{ post.title }}</a>
+					</h1>
+					{% if post.subtitle %}
+					<h2 class="blog-subtitle">{{ post.subtitle }}</h2>
+					{% endif %}
 			
-				<h3 class="blog_dateauthor">
-					<span itemprop="datePublished">{{ post.date | date: "%d %B %Y" }}</span>{% if post.author %} by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">{{ post.author }}</span></span>{% endif %}
-				</h3>
-			</header>
-			<section>
-				{{ post.content | split:"<!--more-->" | first }}
-				<p>
-					<a class="blog_readmore" itemprop="url" href="{{ post.url }}">Read more &raquo;</a>
-				</p>
-			</section>
-		</div>
-	</article>
-	<hr/>
+					<h3 class="dateauthor">
+						<span itemprop="datePublished">{{ post.date | date: "%d %B %Y" }}</span>{% if post.author %} by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">{{ post.author }}</span></span>{% endif %}
+					</h3>
+				</header>
+				<section>
+					{% if post.excerpt %}
+					{{ post.excerpt }}
+					{% else %}
+					{{ post.content | split:"<!--more-->" | first }}
+					{% endif %}
+					<p>
+						<a class="blog_readmore" itemprop="url" href="{{ post.url }}">Read more &raquo;</a>
+					</p>
+				</section>
+			</div>
+		</article>
+	</div>
 {% endfor %}
 </div>
 {% if paginator.total_pages > 1 %}

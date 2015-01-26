@@ -1,15 +1,40 @@
 ---
 layout: default
 ---
-<div class="post">
-
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
-  </header>
-
-  <article class="post-content">
-    {{ content }}
-  </article>
-
+<div class="container">
+	<div class="post">
+		<div class="post-article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
+			<header class="post-header">
+				<h1 class="post-title" itemprop="headline">{{ page.title }}</h1>
+				{% if page.subtitle %}
+				<h2 class="post-subtitle">{{ page.subtitle }}</h2>
+				{% endif %}
+				<h3 class="dateauthor">
+					<span itemprop="datePublished">{{ page.date | date: "%d %B %Y" }}</span>{% if page.author %} by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">{{ page.author }}</span></span>{% endif %}
+			</header>
+			<article class="post-content">
+				{% if page.image %}
+					<img class="post-image" itemprop="image" alt="{{ page.title }}" src="{{ page.image }}" />
+				{% endif %}
+    			{{ content }}
+			</article>
+		</div>
+		<div class="post-sidebar">
+		<aside>
+			&nbsp;
+		</aside>
+		</div>
+	</div>
+	<div class="col12">
+		<div class="paginator col4 shift2">
+			<ul>
+				{% if page.previous %}
+				<li><a href="{{ page.previous.url | prepend: site.baseurl | replace: '//','/' }}">&laquo; Previous</a></li>
+				{% endif %}
+				{% if page.next %}
+				<li><a href="{{ page.next.url | prepend: site.baseurl | replace: '//','/' }}">Next &raquo;</a></li>
+				{% endif %}
+			</ul>
+		</div>
+	</div>
 </div>

@@ -23,11 +23,10 @@
 		text-decoration: none;
 	}
   
-	$pagination-border-color: $base-border-color;
-	$pagination-border: 1px solid $pagination-border-color;
-	$pagination-background: lighten($pagination-border-color, 10);
+	$pagination-border: 1px solid $secondary-background-border-color;
+	$pagination-background:$secondary-background-color;
 	$pagination-hover-background: lighten($pagination-background, 5);
-	$pagination-color: $text-color;
+	$pagination-color: $link-color;
 
 	text-align: center;
 
@@ -65,7 +64,7 @@
 			&:hover,
 			&:focus {
 				background: $pagination-hover-background;
-				color: $link-color;
+				color: darken($link-color,10);
 			}
 
 			&:active {
@@ -111,6 +110,45 @@ h2.frontpage-subheader {
 /**
  * Blog layout
  */
-article {
-	margin: 1em;
+.blog-preview {
+	@include span-columns(12);
+	@include omega();
+
+	.blog-preview-image {
+		@include span-columns(4);
+	}
+	.blog-preview-twothirds {
+		@include span-columns(8);
+	}
+	.blog-preview-fullwidth {
+		@include span-columns(12);
+	}
+	
+	article {
+		margin: 1em 0;
+	}
 }
+
+h3.dateauthor {
+	font-size: 1.25em;
+	color: $headings-small-color;
+}
+
+/**
+ * Post layout
+ */
+.post-article { 
+	@include span-columns(9);
+}
+
+.post-header {
+	margin: 1em 0;
+}
+.post-aside { 
+	@include span-columns(3);
+}
+.post-subtitle { }
+
+.post-image { }
+
+
