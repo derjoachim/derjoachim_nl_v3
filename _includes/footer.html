@@ -1,3 +1,28 @@
 <footer class="site-footer">
-
+	<div class="footer-container">
+		<div class="footer-copyright">&copy; Joachim van de Haterd, 2011-2015</div>
+		<div class="footer-bottomnav">
+			<ul>
+            {% for item in site.data.pages.bottom %}
+            {% assign current = nil %}
+            {% if page.url contains item.url %}{% assign current = ' active' %}{% endif %}
+            <li class="navbar_item{{ current }}" role="menuitem">
+                <a href="{{ item.url }}">{{ item.text }}</a>
+            </li>
+            {% endfor %}		
+			</ul>
+		</div>
+		<div class="footer-socialmedia">
+			<ul>
+				<li><a href="#"><span class="icon-twitter">*</span></a></li>
+				<li><a href="#"><span class="icon-linkedin">*</span></a></li>
+				<li><a href="#"><span class="icon-github">*</span></a></li>
+				<li><a href="#"><span class="icon-lastfm">*</span></a></li>
+				<li><a href="#"><span class="icon-stumbleupon">*</span></a></li>
+			</ul>
+		</div>
+		<div class="footer-totop">
+			<a href="#top">Up</a>
+		</div>
+	</div>
 </footer>

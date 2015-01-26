@@ -1,0 +1,56 @@
+{
+	"header": [
+		{
+			"text": "Joablog",
+			"url": "/index.html"
+		},
+		{
+			"text": "About Me",
+			"url": "/about-me"
+		},
+		{
+			"text": "Curriculum Vitae",
+			"url": "/curriculum-vitae"
+		}
+	],
+	"bottom": [
+		{
+			"text": "Disclaimer",
+			"url": "/disclaimer"
+		},
+		{
+			"text": "Acknowledgement",
+			"url" : "/acknowledgement"
+		},
+		{
+			"text": "Stack",
+			"url": "/stack"
+		}
+	],
+	"socialmedia": [
+		{
+			"name": "twitter",
+			"url": "http://twitter.com/joachimvdhaterd"
+		},
+		{
+			"name": "linkedin",
+			"url": "http://www.linkedin.com/in/joachimvandehaterd"
+		},
+		{
+			"name": "github",
+			"url": "https://github.com/derjoachim"
+		},
+		{
+			"name": "lastfm",
+			"url": "http://www.last.fm/user/der_joachim"
+		},
+		{
+			"name": "stumbleupon",
+			"url": "http://www.stumbleupon.com/stumbler/der-joachim/"
+		},
+		{
+			"name": "RSS",
+			"url": "feed.xml"
+		}
+	]
+}

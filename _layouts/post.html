@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<div class="container">
+<div class="container bottom-margin">
 	<div class="post">
 		<div class="post-article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 			<header class="post-header">
@@ -31,6 +31,7 @@ layout: default
 				{% if page.previous %}
 				<li><a href="{{ page.previous.url | prepend: site.baseurl | replace: '//','/' }}">&laquo; Previous</a></li>
 				{% endif %}
+				<li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
 				{% if page.next %}
 				<li><a href="{{ page.next.url | prepend: site.baseurl | replace: '//','/' }}">Next &raquo;</a></li>
 				{% endif %}

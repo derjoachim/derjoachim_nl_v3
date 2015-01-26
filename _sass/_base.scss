@@ -21,14 +21,6 @@ h1,h2,h3,h4,h5,h6 {
     letter-spacing: -1px;
 	font-weight: 200;
 	margin-bottom: 4px;
-
-	//a {
-	//	color: $brand-primary;
-	//	&:hover {
-	//		color: darken($brand-primary,15);
-	//	}
-	//}
-
     small,
     .small {
         font-weight: normal;
@@ -49,9 +41,12 @@ a {
  */
 div.container {
 	@include outer-container;
-	margin-bottom: (1.5 * $gutter);
 	//border: 1px solid $background-color;
 	//box-shadow: 0 0 8px darken($background-color, 10%); // @TODO
+}
+
+.wrapper {
+   @include clearfix;
 }
 
 div.trigger, div.omega {

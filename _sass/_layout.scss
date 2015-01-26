@@ -1,8 +1,8 @@
 /**
  * Pagination
  **/
-.paginator {  
-	$base-border-color: $brand-primary !default;
+.paginator {
+//margin	margin: 1em ;
 	$base-border-radius: 3px !default;
 	$base-spacing: 1.5em !default;
 	$base-link-color: $link-color !default;
@@ -85,9 +85,14 @@
 /**
  * Frontpage
  */
+div.bottom-margin {
+	margin-bottom: (1.5 * $gutter);
+}
+
 .frontpage {
 	@include span-columns(12);
 	@include omega();
+	margin-top: 2px;
 
 	border-bottom: 1px solid #f3f3f3;
 	background: url('../assets/images/template/header-image.jpg') no-repeat right 0;
@@ -114,11 +119,21 @@ h2.frontpage-subheader {
 	@include span-columns(12);
 	@include omega();
 
-	.blog-preview-image {
-		@include span-columns(4);
+	.blog-preview-img {
+		@include span-columns(4 of 12);
+		text-align: center;
+		font-size: 0;
 	}
+	img.blog-image {
+		max-width:100%;
+		max-height:100%;
+		border-radius: 0.5em;
+		margin: 0.5em;
+		vertical-align: middle;
+	}
+
 	.blog-preview-twothirds {
-		@include span-columns(8);
+		@include span-columns(8 of 12);
 	}
 	.blog-preview-fullwidth {
 		@include span-columns(12);
@@ -139,6 +154,7 @@ h3.dateauthor {
  */
 .post-article { 
 	@include span-columns(9);
+	margin-bottom: 1em;
 }
 
 .post-header {
@@ -147,8 +163,85 @@ h3.dateauthor {
 .post-aside { 
 	@include span-columns(3);
 }
-.post-subtitle { }
 
-.post-image { }
+/**
+ * Header
+ */
+header.site-header {
 
+	.site-title {
+		display: none;
+	}
+	nav.site-nav {
+		text-align: right;
+		margin: 1em 0;
+		ul {
+			margin: 0 1em;
+			padding: 0;
+			display: inline;
+			text-align: center;
+		}
+		li {
+			list-style: none;
+			display: inline;
+			margin-right: 1em;
+			&:first {
+				margin: 0;
+			}
 
+			a:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/**
+ * Footer
+ */
+footer.site-footer {
+	border-top: 1px solid $secondary-background-border-color;
+	border-bottom: 2px solid $brand-primary;
+	background: $secondary-background-color;
+	div.footer-container {
+		@include outer-container;
+	}
+	
+	ul {
+		margin: 0;
+		padding: 0;
+		display: inline;
+		text-align: center;
+	}
+	li {
+		list-style: none;
+		display: inline;
+		padding-left: 1em;
+		&:first-child {
+			padding-left: 0;
+		}
+	}
+}
+.footer-bottomnav {
+	@include span-columns(4);
+	text-align: left;
+	margin: 1em 0;
+	a:hover {
+		text-decoration: underline;
+	}
+}
+
+.footer-socialmedia{
+	@include span-columns(3);
+	margin: 1em 0;
+}
+.footer-totop{
+	@include span-columns(1);
+	@include omega();
+	text-align: right;
+	margin: 1em 0;
+}
+.footer-copyright{
+	@include span-columns(4);
+	margin: 1em 0;
+}

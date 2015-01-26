@@ -2,7 +2,7 @@
 layout: default
 title: Welcome to derjoachim.nl
 ---
-<div itemscope itemtype="http://schema.org/CreativeWork/WebSite" class="container">
+<div itemscope itemtype="http://schema.org/CreativeWork/WebSite" class="container bottom-margin">
 	<div class="frontpage">
 		<span itemprop="description" style="display:none">{{ site.description }}</span>
 		<h1 class="frontpage-header" itemprop="headline">{{ site.title }}</h1>
@@ -44,32 +44,32 @@ title: Welcome to derjoachim.nl
 			</div>
 		</article>
 	</div>
-{% endfor %}
-</div>
-{% if paginator.total_pages > 1 %}
-<div class="paginator col6 shift3">
-	<ul>
-	{% if paginator.previous_page %}
-		<li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//','/' }}">&laquo;</a></li>
-	{% else %}
-		<li><span class="page-prev">&laquo;</span></li>
-	{% endif %}
-
-	{% for page in (1..paginator.total_pages) %}
-		{% if paginator.page == page %}
-			<li><span class="page-current">{{ page }}</span></li>
-		{% elsif page == 1 %}
-			<li><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//','/' }}">{{ page }}</a></li>
+	{% endfor %}
+	{% if paginator.total_pages > 1 %}
+	<div class="paginator col6 shift3">
+		<ul>
+		{% if paginator.previous_page %}
+			<li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//','/' }}">&laquo;</a></li>
 		{% else %}
-			<li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
+			<li><span class="page-prev">&laquo;</span></li>
+		{% endif %}
+
+		{% for page in (1..paginator.total_pages) %}
+			{% if paginator.page == page %}
+				<li><span class="page-current">{{ page }}</span></li>
+			{% elsif page == 1 %}
+				<li><a href="{{ '/index.html' | prepend: site.baseurl | replace: '//','/' }}">{{ page }}</a></li>
+			{% else %}
+				<li><a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a></li>
 		{% endif %}
 	{% endfor %}
 	
 	{% if paginator.next_page %}
-		<li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//','/' }}">&raquo;</a></li>
+			<li><a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//','/' }}">&raquo;</a></li>
 	{% else %}
-		<li><span class="page-next">&raquo;</span></li>
+			<li><span class="page-next">&raquo;</span></li>
 	{% endif %}
-	</ul>
-</div>
+		</ul>
+	</div>
 {% endif %}
+</div>
