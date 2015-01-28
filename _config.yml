@@ -27,7 +27,7 @@ permalink:        pretty
 destination:      _gh_pages
 
 # Blog
-permalink: "/blog/:year/:month/:title"
+permalink: "/blog/:year/:month/:day/:title"
 paginate: 8
 paginate_path: "/blog/page:num"
 
@@ -38,3 +38,5 @@ defaults:
     values:
         layout: "default"
         author: "Joachim van de Haterd"
+
+exclude: ['README.md','LICENSE']
