@@ -1,4 +1,18 @@
 /**
+ * Mixins
+ */
+@mixin social-icon($content,$color) {
+	&:before {
+    	content: $content;
+	}
+	&:hover:before {
+		@include transition (all 0.2s ease-in-out);
+		color: $color;
+	}
+}
+
+
+/**
  * Pagination
  **/
 .paginator {
@@ -216,32 +230,100 @@ footer.site-footer {
 	li {
 		list-style: none;
 		display: inline;
-		padding-left: 1em;
+		padding-left: 0.5em;
 		&:first-child {
 			padding-left: 0;
 		}
 	}
 }
-.footer-bottomnav {
-	@include span-columns(4);
+.footer-left {
+	@include span-columns(6);
 	text-align: left;
 	margin: 1em 0;
-	a:hover {
-		text-decoration: underline;
+
+	ul.nav-bottom {
+		margin-left: 1em;
+		a:hover {
+			text-decoration: underline;
+		}
+		li.nav-bottom-item {
+			.active {
+				color: $brand-primary;
+			}
+		}
 	}
 }
 
-.footer-socialmedia{
-	@include span-columns(3);
-	margin: 1em 0;
-}
-.footer-totop{
-	@include span-columns(1);
-	@include omega();
+.footer-right{
+	@include span-columns(6);
+	@include omega;
+	display: inline-block;
+    vertical-align: middle;
+	line-height: 1.5em;
 	text-align: right;
-	margin: 1em 0;
+	margin: 0.75em 0;
 }
-.footer-copyright{
-	@include span-columns(4);
-	margin: 1em 0;
+
+/**
+ * Stack
+ **/
+.stack-container {
+	@include outer-container;
+	
+	li.stack-block {
+		@include span-columns(3);
+		@include omega(4n);
+		background-color: $secondary-background-color;
+		margin-bottom: 1em;
+	}
+}
+
+/* TODO */
+
+/**
+ * Icomoon icons
+ */
+@font-face {
+	font-family: 'icomoon';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../assets/fonts/icomoon.eot');
+	src: url('../assets/fonts/icomoon.eot?') format('eot'),
+		url('../assets/fonts/icomoon.woff') format('woff'),
+		url('../assets/fonts/icomoon.ttf') format('truetype');
+}
+
+.icon-linkedin:before,
+.icon-twitter:before,
+.icon-github:before,
+.icon-stumbleupon:before,
+.icon-lastfm:before,
+.icon-feed:before,
+.icon-circle-up:before {
+	font-family: 'icomoon';
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+    color: $link-color;
+} 
+
+.icon-linkedin {
+	@include social-icon("\eac9",$linkedin);
+}
+.icon-twitter {
+	@include social-icon("\ea91",$twitter);
+}
+.icon-github {
+	@include social-icon("\eab4",$github);
+}
+.icon-stumbleupon {
+	@include social-icon("\eace",$stumbleupon);
+}
+.icon-lastfm {
+	@include social-icon("\eaca",$lastfm);
+}
+.icon-circle-up {
+	font-size: 1.5em;
+	margin-left: 1em;
+	@include social-icon("\ea41",$brand-primary);
 }

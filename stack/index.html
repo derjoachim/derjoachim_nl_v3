@@ -1,0 +1,15 @@
+---
+layout: page
+title: Stack
+description: A list of open source tools and techniques that made this site possible
+---
+<div class="stack-container">
+	<ul>
+		{% for item in site.data.stack.stack %}
+		<li class="stack-block">
+			<h5><a href="{{item.url}}" rel="nofollow" target="_blank">{{ item.name }}</a></h5>
+			<p>{{ item.text }}</p>
+		</li>
+		{% endfor %}
+	</ul>
+</div>

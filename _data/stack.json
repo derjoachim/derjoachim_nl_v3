@@ -1,0 +1,52 @@
+{
+	"stack": [
+		{
+			"name": "Jekyll",
+			"logo": "assets/images/stack/jekyllrb.svg",
+			"text": "Jekyll is a simple, blog aware, static site generator written in Ruby.",
+			"url": "http://jekyllrb.com/"
+		},
+		{
+			"name": "HTML5",
+			"logo": "assets/images/stack/html5.svg",
+			"text": "HTML5 is a core technology markup language of the Internet used for structuring and presenting content for the World Wide Web.",
+			"url": "http://w3.org/"
+		},
+		{
+			"name": "Sass",
+			"logo": "",
+			"text": "Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.",
+			"url": "http://sass-lang.com/"
+		},
+		{
+			"name": "Bourbon",
+			"logo": "assets/images/stack/bourbon.png",
+			"text": "A simple and lightweight mixin library for Sass",
+			"url": "http://bourbon.io/"
+		},
+		{
+			"name": "Neat",
+			"logo": "",
+			"text": "A lightweight semantic grid framework for Sass and Bourbon.",
+			"url": "http://neat.bourbon.io/"
+		},
+		{
+			"name": "Bitters",
+			"logo": "",
+			"text": "Scaffold styles, variables and structure for Bourbon projects.",
+			"url": "http://bitters.bourbon.io/"
+		},
+		{
+			"name": "Vim",
+			"logo": "",
+			"text": "Vim is a highly configurable text editor built to enable efficient text editing. It is an improved version of the vi editor distributed with most UNIX systems.",
+			"url": "http://vim.org/"
+		},
+		{
+			"name": "Arch Linux",
+			"logo": "",
+			"text": "Arch Linux is a general purpose GNU/Linux distribution versatile enough to suit any role. Development focuses on simplicity, minimalism, and code elegance.",
+			"url": "http://archlinux.org/" 
+		}			
+	]
+}
