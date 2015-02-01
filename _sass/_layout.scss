@@ -265,6 +265,26 @@ footer.site-footer {
 }
 
 /**
+ * Bulleted lists
+ */
+
+ol.numbered {
+	padding-left: 2em;
+	margin-bottom: 1em
+	li {
+		list-style: georgian;
+	}
+}
+
+ul.bullets {
+	padding-left: 2em;
+	margin-bottom: 1em;
+	li {
+		list-style: disc;
+	}
+}
+
+/**
  * Stack
  **/
 .stack-container {
