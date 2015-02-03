@@ -16,7 +16,6 @@
  * Pagination
  **/
 .paginator {
-//margin	margin: 1em ;
 	$base-border-radius: 3px !default;
 	$base-spacing: 1.5em !default;
 	$base-link-color: $link-color !default;
@@ -139,8 +138,8 @@ h2.frontpage-subheader {
 		font-size: 0;
 	}
 	img.blog-image {
-		max-width:100%;
-		max-height:100%;
+		max-width: 100%;
+		max-height: 100%;
 		border-radius: 0.5em;
 		margin: 0.5em;
 		vertical-align: middle;
@@ -176,6 +175,11 @@ h3.dateauthor {
 }
 .post-aside { 
 	@include span-columns(3);
+}
+
+.post-image {
+	max-width: 100%;
+	border-radius: 0.5em;
 }
 
 /**
@@ -293,8 +297,26 @@ ul.bullets {
 	li.stack-block {
 		@include span-columns(3);
 		@include omega(4n);
-		background-color: $secondary-background-color;
+		border: 1px solid $brand-primary;
+		border-radius: 0.5em;
 		margin-bottom: 1em;
+		h5 {
+			text-align: center;
+			background-color: $secondary-background-color;
+			border-bottom: 1px solid $secondary-background-border-color;
+		}
+		.stack-img-container {
+			text-align: center;
+			margin: 1em;
+			img {
+				max-height: 4em;
+				min-height: 4em;
+			}
+		}
+		p {
+			margin: 0 1em 1em;
+		}
+
 	}
 }
 

@@ -8,7 +8,12 @@ description: A list of open source tools and techniques that made this site poss
 		{% for item in site.data.stack.stack %}
 		<li class="stack-block">
 			<h5><a href="{{item.url}}" rel="nofollow" target="_blank">{{ item.name }}</a></h5>
+			<div class="stack-img-container">
+				<img src="{{ item.logo }}" alt="{{item.name}}"/>
+			</div>
+
 			<p>{{ item.text }}</p>
+			<p><a href="{{ item.url }}" target="_blank">Visit {{ item.name }} &raquo;</a>
 		</li>
 		{% endfor %}
 	</ul>

@@ -36,6 +36,20 @@ a {
 		color: darken($link-color,15);
 	}
 }
+
+figure {
+	img {
+		margin: 0.5em 0;
+		border-radius: 0.5em;
+		box-shadow: 0 0 8px darken($background-color, 10%);
+	}
+	figcaption {
+		font-style: italic;
+		color: $headings-small-color;
+		text-align:center;
+	}
+}
+
 /**
  * Grid
  */
