@@ -299,6 +299,7 @@ ul.bullets {
 		@include omega(4n);
 		border: 1px solid $brand-primary;
 		border-radius: 0.5em;
+		overflow: hidden;
 		margin-bottom: 1em;
 		h5 {
 			text-align: center;
