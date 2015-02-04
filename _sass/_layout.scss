@@ -210,6 +210,12 @@ header.site-header {
 			a:hover {
 				text-decoration: underline;
 			}
+			&.reallyactive a{
+				color: red;
+			}
+			&.active a{
+				color: $brand-primary;//$headings-small-color;
+			}
 		}
 	}
 }
@@ -251,8 +257,8 @@ footer.site-footer {
 			text-decoration: underline;
 		}
 		li.nav-bottom-item {
-			.active {
-				color: $brand-primary;
+			&.active a{
+				color: $brand-primary;//$headings-small-color;
 			}
 		}
 	}

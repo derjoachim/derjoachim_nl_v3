@@ -3,11 +3,13 @@
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
     <nav class="site-nav">
 		<ul role="navigation">
+			{% assign url = page.url|remove:'/index.html' %}
             {% for item in site.data.pages.header %}
-            {% assign current = nil %}
-            {% if page.url contains item.url %}{% assign current = ' active' %}{% endif %}
+				{% assign currenturl = item.url|remove:'/index.html' %}
+            	{% assign current = nil %}
+           		{% if url == currenturl %}{% assign current = ' active' %}{% endif %}
             <li class="navbar_item{{ current }}" role="menuitem">
-                <a href="{{ item.url }}">{{ item.text }}</a>
+            	<a href="{{ item.url }}">{{ item.text }}</a>
             </li>
             {% endfor %}		
 		</ul>
