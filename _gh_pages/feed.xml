@@ -6,8 +6,8 @@
 </description>
     <link>http://derjoachim.nl/</link>
     <atom:link href="http://derjoachim.nl/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 04 Feb 2015 22:22:17 +0100</pubDate>
-    <lastBuildDate>Wed, 04 Feb 2015 22:22:17 +0100</lastBuildDate>
+    <pubDate>Thu, 05 Feb 2015 21:13:29 +0100</pubDate>
+    <lastBuildDate>Thu, 05 Feb 2015 21:13:29 +0100</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -105,6 +105,56 @@
         <pubDate>Sun, 09 Nov 2014 08:39:47 +0100</pubDate>
         <link>http://derjoachim.nl/blog/2014/11/09/in-praise-of-the-blade-song</link>
         <guid isPermaLink="true">http://derjoachim.nl/blog/2014/11/09/in-praise-of-the-blade-song</guid>
+        
+        
+        <category>ramblings</category>
+        
+      </item>
+    
+      <item>
+        <title>On Philosophy, Architecture and Ants</title>
+        <description>&lt;p&gt;On &lt;strong&gt;29 &amp;amp; 30 October 2014&lt;/strong&gt;, the yearly-ish Nooku Jam was held. The &lt;a href=&quot;http://www.moyoweb.nl/&quot;&gt;Moyo Web Architects&lt;/a&gt; team was there with a stronger presence than ever. As one of the organizers put it, we keep spawning. Five of us were there. Two of us did presentations and one of us tells his story.&lt;/p&gt;
+
+&lt;!--more--&gt;
+
+
+&lt;p&gt;For a regular participant of the Nooku Jam, the venue was familiar: the &lt;a href=&quot;http://flandersdc.be/&quot;&gt;Flanders DC&lt;/a&gt; creativity lab in Leuven, Belgium. Conveniently located near the city center with its many restaurants and pubs, it is the ideal place to let the creativity (and coffee!) flow first and let the beer flow later.&lt;/p&gt;
+
+&lt;p&gt;The Jam itself was held along its traditional &lt;a href=&quot;http://barcamp.org/w/page/405173/TheRulesOfBarCamp&quot;&gt;barcamp&lt;/a&gt; format. There was no preset agenda. Participants were encouraged to share their ideas and wishes on the Wall of Ideas&amp;trade;. A vote was cast for the favorite subjects and the ones with most votes were planned as a presentation.&lt;/p&gt;
+
+&lt;h2&gt;The First Day&lt;/h2&gt;
+
+&lt;p&gt;Day 1 had the customary talk about the roadmap and recent changes in the framework and platform by &lt;a href=&quot;https://twitter.com/johanjanssens&quot;&gt;Johan Janssens&lt;/a&gt;. He also explained about the philosophy behind Nooku. It distinguishes itself from other frameworks by being not only a framework, but rather a complete architecture.&lt;/p&gt;
+
+&lt;p&gt;A good tradition was held up by house philosopher &lt;a href=&quot;https://twitter.com/HermanPeeren&quot;&gt;Herman Peeren&lt;/a&gt;. This time he talked about the &lt;a href=&quot;http://en.wikipedia.org/wiki/Data,_context_and_interaction&quot;&gt;DCI&lt;/a&gt; design pattern, which is not only relatively unknown, but hardly used in any PHP framework. Of course, Nooku does support it. Johan showed us.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/stevenrombauts&quot;&gt;Steven Rombauts&lt;/a&gt; did an interesting talk on Elastic Search, a Lucene-based multilingual full-text search engine. &lt;a href=&quot;https://twitter.com/rhcpoort&quot;&gt;Robin Poort&lt;/a&gt; discussed gruntjs and how he used it to automate repetitive development-related tasks.&lt;/p&gt;
+
+&lt;p&gt;Special guest this year was &lt;a href=&quot;https://twitter.com/rastin&quot;&gt;Rastin Mehr&lt;/a&gt;, developer of the &lt;a href=&quot;http://getanahita.com/&quot;&gt;Anahita&lt;/a&gt; open source knowledge networking platform. He explained how his implementation was inspired by naturally occuring patterns, such as the migration of ants. His talk was quite impressive and he was awarded with the &#39;most interesting talk&#39; award.&lt;/p&gt;
+
+&lt;h2&gt;The Second Day&lt;/h2&gt;
+
+&lt;p&gt;Two themes were particularly characteristic to this edition of the nooku Jam, there was much focus on mobile development and Javascript frameworks. Both were extensively covered during the second day.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://twitter.com/janssenstom&quot;&gt;Tom Janssens&lt;/a&gt; and Robin Poort discussed the mobile first and progressive enhancement theorems. In order to support any platform and resolution, one should start from the smallest resolution and work up to the big desktop-sized resolutions. Also, one should start designing with only HTML and CSS in mind and enhance upon this basic design.&lt;/p&gt;
+
+&lt;p&gt;At the same time, our own &lt;a href=&quot;https://twitter.com/JaspervanRijbro&quot;&gt;Jasper van Rijbroek&lt;/a&gt; demonstrated one of his &lt;a href=&quot;https://github.com/JaspervRijbroek/raddish&quot;&gt;hobby projects&lt;/a&gt;: a framework written in Nodejs that follows the Nooku architecture. His talk was regarded one of the most interesting talks of the entire Jam.&lt;/p&gt;
+
+&lt;p&gt;Our developer &lt;a href=&quot;https://twitter.com/Klaasvaak_&quot;&gt;Joep van der Heijden&lt;/a&gt; did a talk on emberjs and how he made it play nice with Nooku in the backend. He demonstrated it by showing off one of our projects, a frontend to a shared content repository.&lt;/p&gt;
+
+&lt;p&gt;Long time Nooku contributor and former colleague &lt;a href=&quot;https://twitter.com/holeedave&quot;&gt;Dave Li&lt;/a&gt; gave a further explanation on a number of frameworks aimed at mobile development. It started as an introduction to the Ionic framework, but evolved into a comparison of several competitors. Phonegap was discussed, as well as Titanium.&lt;/p&gt;
+
+&lt;p&gt;Day two ended with the usual lightning talks on interesting apps (of which &lt;a href=&quot;https://twitter.com/peterraeves&quot;&gt;Peter Raeves&lt;/a&gt; will give an overview), a well-improvised talk by Herman Peeren on -amongst others- the first encyclopedia and a &lt;a href=&quot;https://www.destroyallsoftware.com/talks/wat&quot;&gt;reminder&lt;/a&gt; of how some programming languages misbehave by Dave Li.&lt;/p&gt;
+
+&lt;h2&gt;Afterword&lt;/h2&gt;
+
+&lt;p&gt;The Nooku Jam ended for me with a long motorcycle ride. In order to prevent being hypnotized by the dark roads, I mulled over everything I saw and heard. It was my first Jam as a non-developer, but I would not have liked to miss this Jam. The community is awesome! Their collective knowledge, drive and love of sharing is reason enough to go. However, what I saw in terms of interesting techniques made me second guess my decision to stop developing. To borrow one of the taglines from &lt;a href=&quot;http://drupal.org&quot;&gt;A Certain Other CMS&lt;/a&gt; (and a nod to Herman Peeren), I came for the community, but stayed for the code.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This is a guest post on the &lt;a href=&quot;http://nooku.org/blog&quot;&gt;Nooku blog&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 03 Nov 2014 00:00:00 +0100</pubDate>
+        <link>http://derjoachim.nl/blog/2014/11/03/on-philosophy-architects-and-ants</link>
+        <guid isPermaLink="true">http://derjoachim.nl/blog/2014/11/03/on-philosophy-architects-and-ants</guid>
         
         
         <category>ramblings</category>
@@ -361,133 +411,6 @@
         <pubDate>Sat, 10 Mar 2012 17:59:27 +0100</pubDate>
         <link>http://derjoachim.nl/blog/2012/03/10/on-respect-for-it-skills</link>
         <guid isPermaLink="true">http://derjoachim.nl/blog/2012/03/10/on-respect-for-it-skills</guid>
-        
-        
-        <category>rants</category>
-        
-      </item>
-    
-      <item>
-        <title>On kludging with clutches</title>
-        <description>&lt;p&gt;I do my own stunts. That goes for both my driving and the way I keep my bike in a ridable shape. Recently though, I was almost forced to have a professional dismantle a large part of my bike. The reason? Bad clutch design.&lt;/p&gt;
-
-
-
-
-&lt;h2&gt;Too tight&lt;/h2&gt;
-
-
-
-
-&lt;p&gt;Shortly after my last service, I noticed that whatever I did, my clutch cable was too tight. On the handlebar, I was not able to loosen it. Since I have already had the pleasure of having to replace an entire clutch, I knew that I would have to stop riding and find a solution.&lt;/p&gt;
-
-
-
-
-&lt;p&gt;Roughly speaking, there were two options: either my clutch cable had to be adjusted on the clutch side, or the cable had to be replaced. I checked my cable for unwanted friction. It appeared OK, so option 1 it was.&lt;/p&gt;
-
-
-
-
-&lt;h2&gt;Weekend mechanic&lt;/h2&gt;
-
-
-
-
-&lt;p&gt;At this point, please allow me to state that I am a weekend mechanic. For me, it is a hobby, and since it is neither my vocation nor my biggest talent, I have a decent set of tools. However, the most specialized tool I have, is a torque wrench. There is probable a proper tool for this job. I do not have it though.&lt;/p&gt;
-
-
-
-
-&lt;p&gt;That being said, I have a good head on my shoulders, and I was to be as careful as possible. After removing the fairing, I noticed that the clutch cable was too tight indeed. For the uninitiated and non-technical folks out there, please allow me to explain the system.&lt;/p&gt;
-
-
-
-
-&lt;p&gt;The adjustment bolt is held fast by a locknut. So, the intrepid mechanic (that would be me), is to loosen the locknut, adjust the cable until the clutch meets the factory specification, and retighten the locknut again. Simple, no?&lt;/p&gt;
-
-
-
-
-&lt;h2&gt;Snakemen&lt;/h2&gt;
-
-
-
-
-&lt;p&gt;Hardly so. The locknut is in a tight space between the gearbox and the final drive. While holding the adjustment bolt with a #11, you fasten the locknut with a #13 spanner. However, that won&#39;t work, because there simply is no space. A normal-sized spanner is too long and unwieldy. Furthermore, since you need to sit on the left side of the bike, you have to do everything with your off hand if you are right-handed like 90% of all people.&lt;/p&gt;
-
-
-
-
-&lt;p&gt;Apparently, the clutch mechanism is built with left-handed snakemen in mind.&lt;/p&gt;
-
-
-
-
-&lt;h2&gt;How to (almost) lose both a tool and a gearbox&lt;/h2&gt;
-
-
-
-
-&lt;p&gt;Although I am not a particularly talented mechanic, my powers of improvisation are huge. I am a programmer after all. I found an old spanner that was a lot shorter and thinner. My grandfather would have called it &lt;em&gt;pisbakkenstaal&lt;/em&gt; or urinal steel. However, I was able to get a grip on an otherwise unreachable bolt.&lt;/p&gt;
-
-
-
-
-&lt;p&gt;Picture me lying on a cold garage floor while bending my arms and wrists in an unnatural way to tighten a nut that is not physically reachable with standard issue tools. A slight fumble was needed before my spanner disappeared in the big cavernous hole behind the clutch cable, into the deep innards of my bike.&lt;/p&gt;
-
-
-
-
-&lt;p&gt;At that moment, I felt my heart sink. I was well and truly forked. Sideways. With a chainsaw.&lt;/p&gt;
-
-
-
-
-&lt;h2&gt;Kludging to the rescue&lt;/h2&gt;
-
-
-
-
-&lt;p&gt;First, I tried to pry the little spanner free with my fingers. Needless to say, the spanner had fallen too far into the guts of my bike. Useless. Fortunately, I found a nice gadget somewhere in my garage. It is a flexible piece of wire with a strong magnet and a little three pronged retractable claw thingy on one end. I decided to use that, and since the wire thingy is very slim with its 4mm diameter, I was able to at least touch the spanner. The magnet was not able to reach it. Furthermore, the spanner fell even deeper.&lt;/p&gt;
-
-
-
-
-&lt;p&gt;That would have been a disaster, were it not that it had fallen into a space that was reachable from underneath. I took my trusty thingumabob and used the claw to retrieve that pesky spanner. Problem solved. Kludging to the rescue. Angus MacGyver would have been proud!&lt;/p&gt;
-
-
-
-
-&lt;h2&gt;Dear BMW designers&lt;/h2&gt;
-
-
-
-
-&lt;p&gt;Next time you design something that should be easy to adjust, please keep two things in mind:&lt;/p&gt;
-
-
-
-
-&lt;ol class=&quot;numbered&quot;&gt;
-    &lt;li&gt;Keep it reachable&lt;/li&gt;
-    &lt;li&gt;Make sure that it is not near any big hollow hard to reach spaces&lt;/li&gt;
-&lt;/ol&gt;
-
-
-
-
-&lt;p&gt;Sincerely,&lt;/p&gt;
-
-
-
-
-&lt;p&gt;a weekend mechanic&lt;/p&gt;
-
-</description>
-        <pubDate>Thu, 23 Feb 2012 13:51:17 +0100</pubDate>
-        <link>http://derjoachim.nl/blog/2012/02/23/on-kludging-with-clutches</link>
-        <guid isPermaLink="true">http://derjoachim.nl/blog/2012/02/23/on-kludging-with-clutches</guid>
         
         
         <category>rants</category>
