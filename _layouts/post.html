@@ -10,7 +10,7 @@ layout: default
 				<h2 class="post-subtitle">{{ page.subtitle }}</h2>
 				{% endif %}
 				<h3 class="dateauthor">
-					<span itemprop="datePublished">{{ page.date | date: "%d %B %Y" }}</span>{% if page.author %} by <span itemscope itemtype="http://schema.org/Person"><span itemprop="author">{{ page.author }}</span></span>{% endif %}
+					<span itemprop="datePublished">{{ page.date | date: "%d %B %Y" }}</span>{% if page.category %} -- in {{ page.category }}</span></span>{% endif %}
 			</header>
 			<article class="post-content">
 				{% if page.image %}

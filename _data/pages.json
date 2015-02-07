@@ -49,8 +49,8 @@
 			"url": "http://www.stumbleupon.com/stumbler/derjoachim/"
 		},
 		{
-			"name": "RSS",
-			"url": "feed.xml"
+			"name": "feed",
+			"url": "/feed.xml"
 		}
 	]
 }

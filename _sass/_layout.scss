@@ -372,6 +372,9 @@ ul.bullets {
 .icon-lastfm {
 	@include social-icon("\eaca",$lastfm);
 }
+.icon-feed {
+	@include social-icon("\ea94",$brand-primary);
+}
 .icon-circle-up {
 	font-size: 1.5em;
 	margin-left: 1em;

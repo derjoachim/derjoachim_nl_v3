@@ -40,3 +40,5 @@ defaults:
         author: "Joachim van de Haterd"
 
 exclude: ['README.md','LICENSE']
+gems:
+    - jekyll-sitemap
