@@ -46,7 +46,7 @@ title: Welcome to derjoachim.nl
 	</div>
 	{% endfor %}
 	{% if paginator.total_pages > 1 %}
-	<div class="paginator col6 shift3">
+	<div class="paginator">
 		<ul>
 		{% if paginator.previous_page %}
 			<li><a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//','/' }}">&laquo;</a></li>

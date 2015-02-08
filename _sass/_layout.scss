@@ -22,6 +22,17 @@
 	$dark-gray: #333 !default;
 	$large-screen: em(860) !default;
 	$base-font-color: $dark-gray !default;
+
+	@include media($mobile) {
+		@include span-columns(4);
+	}
+	@include media($tablet) {
+		@include span-columns(8);
+	}
+	@include media(min-width $desktop-size) {
+		@include span-columns(6);
+		@include shift(3);
+	}
   
 	ul {
 		margin: 0;
@@ -108,14 +119,22 @@ div.bottom-margin {
 	margin-top: 2px;
 
 	border-bottom: 1px solid #f3f3f3;
-	background: url('../assets/images/template/header-image.jpg') no-repeat right 0;
-	min-height: 213px;
+	@include media(min-width $tablet-size) {
+		background: url('../assets/images/template/header-image.jpg') no-repeat right 0;
+		min-height: 213px;
+	}
 }
 
 h1.frontpage-header {
-	font-size: 5em;
-	margin-left: 1em;
-	font-spacing: -2px;
+	@include media(min-width $tablet-size) {
+		font-size: 5em;
+		font-spacing: -2px;
+		margin-left: 1em;
+	}
+	@include media(max-width $tablet-size) {
+		font-size: 3em;
+		font-spacing: -1px;
+	}
 	color: $brand-primary;
 }
 h2.frontpage-subheader {
@@ -155,10 +174,22 @@ h2.frontpage-subheader {
 	article {
 		margin: 1em 0;
 	}
+	h1 {
+		@include media(max-width $tablet-size) {
+			font-size: 1.35em;
+		}
+	}
+
 }
 
+
 h3.dateauthor {
-	font-size: 1.25em;
+	@include media(max-width $tablet-size) {
+		font-size: 1em;
+	}
+	@include media(min-width $tablet-size) {
+		font-size: 1.25em;
+	}
 	color: $headings-small-color;
 }
 
@@ -166,7 +197,24 @@ h3.dateauthor {
  * Post layout
  */
 .post-article { 
-	@include span-columns(9);
+	@include media(min-width $tablet-size) {
+		@include span-columns(9);
+	}
+	@include media ($tablet) {
+		@include span-columns(6);
+	}
+	@include media (max-width $tablet-size) {
+		@include span-columns(12);
+		h1 {
+			font-size: 1.35em;
+		}
+		h2 {
+			font-size: 1.25em;
+		}
+		h3 {
+			font-size: 1.15em;
+		}
+	}
 	margin-bottom: 1em;
 }
 
@@ -174,9 +222,19 @@ h3.dateauthor {
 	margin: 1em 0;
 }
 .post-aside { 
-	@include span-columns(3);
+	@include media(min-width $tablet-size) {
+		@include span-columns(3);
+	}
+	@include media($mobile) {
+		@include span-columns(4);
+	}
 }
 
+.post-title {
+	@include media(max-width $tablet-size) {
+		font-size: 1.35em;
+	}
+}
 .post-image {
 	max-width: 100%;
 	border-radius: 0.5em;
@@ -214,7 +272,7 @@ header.site-header {
 				color: red;
 			}
 			&.active a{
-				color: $brand-primary;//$headings-small-color;
+				color: $brand-primary;
 			}
 		}
 	}
@@ -247,7 +305,15 @@ footer.site-footer {
 	}
 }
 .footer-left {
-	@include span-columns(6);
+	@include media(min-width $desktop-size) {
+		@include span-columns(6);
+	}
+	@include media($tablet) {
+		@include span-columns(4);
+	}
+	@include media($mobile) {
+		@include span-columns(2);
+	}
 	text-align: left;
 	margin: 1em 0;
 
@@ -258,14 +324,22 @@ footer.site-footer {
 		}
 		li.nav-bottom-item {
 			&.active a{
-				color: $brand-primary;//$headings-small-color;
+				color: $brand-primary;
 			}
 		}
 	}
 }
 
 .footer-right{
-	@include span-columns(6);
+	@include media(min-width $desktop-size) {
+		@include span-columns(6);
+	}
+	@include media($tablet) {
+		@include span-columns(4);
+	}
+	@include media($mobile) {
+		@include span-columns(2);
+	}
 	@include omega;
 	display: inline-block;
     vertical-align: middle;
@@ -376,7 +450,9 @@ ul.bullets {
 	@include social-icon("\ea94",$brand-primary);
 }
 .icon-circle-up {
-	font-size: 1.5em;
+	@include media(min-width $tablet-size) {
+		font-size: 1.5em;
+	}
 	margin-left: 1em;
 	@include social-icon("\ea41",$brand-primary);
 }
