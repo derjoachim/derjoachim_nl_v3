@@ -1,5 +1,5 @@
 ---
-title: Joomla Is Today's Emacs
+title: Joomla is the Emacs of CMSs
 author: Joachim van de Haterd
 layout: post
 category: Rants
