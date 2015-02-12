@@ -221,12 +221,29 @@ h3.dateauthor {
 .post-header {
 	margin: 1em 0;
 }
-.post-aside { 
+.post-sidebar { 
 	@include media(min-width $tablet-size) {
 		@include span-columns(3);
 	}
 	@include media($mobile) {
 		@include span-columns(4);
+	}
+	margin: 2em 0;
+	.sidebar-block {
+		text-align: center;
+		border: 1px solid $secondary-background-border-color;
+		border-radius: 3px;
+		overflow: hidden;
+		margin-bottom: 1em;
+		h5 {
+			text-align: center;
+			background-color: $secondary-background-color;
+			border-bottom: 1px solid $secondary-background-border-color;
+		}
+		.sidebar-container {
+			text-align: center;
+			margin: 1em;
+		}
 	}
 }
 

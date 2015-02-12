@@ -26,6 +26,11 @@ permalink:        pretty
 # Server
 destination:      _gh_pages
 
+#plugins
+category_archive:
+    path: "categories"
+    slugify: true
+
 # Blog
 permalink: "/blog/:year/:month/:day/:title"
 paginate: 8
