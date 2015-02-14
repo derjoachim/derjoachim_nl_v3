@@ -371,7 +371,7 @@ footer.site-footer {
 
 ol.numbered {
 	padding-left: 2em;
-	margin-bottom: 1em
+	margin-bottom: 1em;
 	li {
 		list-style: georgian;
 	}
@@ -389,11 +389,17 @@ ul.bullets {
  * Stack
  **/
 .stack-container {
-	@include outer-container;
+	@include outer-container($max-width);
 	
 	li.stack-block {
-		@include span-columns(3);
-		@include omega(4n);
+		@include media(min-width $tablet-size) {
+			@include span-columns(3);
+			@include omega(4n);
+		}
+		@include media($mobile) {
+			@include span-columns(2);
+			@include omega(2n);
+		}
 		border: 1px solid $brand-primary;
 		border-radius: 0.5em;
 		overflow: hidden;
@@ -414,8 +420,10 @@ ul.bullets {
 		}
 		p {
 			margin: 0 1em 1em;
+			&.stack-content {
+				min-height: em(72);
+			}
 		}
-
 	}
 }
 
