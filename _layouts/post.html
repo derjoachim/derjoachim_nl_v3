@@ -20,10 +20,10 @@ layout: default
 			</article>
 		</div>
 		<div class="post-sidebar">
+			{% if page.category %}
 			<aside class="sidebar-block">
-				{% if page.category %}
-				{% assign cat = page.category %}
-				{% assign down = cat | downcase %}
+			{% assign cat = page.category %}
+			{% assign down = cat | downcase %}
 				<h5>Latest 5 in {{ cat }}</h5>
 				<div class="sidebar-container">
 					<ul>
@@ -32,9 +32,22 @@ layout: default
 					{% endfor %}
 					</ul>
 				</div>
-				<!-- TODO <p>{% categorylink cat %}Read more in {{ cat }}&nbsp;&raquo;{% endcategorylink %}</p> -->
+				<p><a href="/categories/{{ cat | slugify}}/">Read more in {{ cat }}&nbsp;&raquo;</a></p>
+			</aside>
 			{% endif %}
-		</aside>
+			{% if page.tags != empty %}
+			{% assign tags = page.tags | sort %}
+			<aside class="sidebar-block">
+				<h5>Tags</h5>
+				<div class="sidebar-container">
+					<ul>
+						{% for tag in tags %}
+						<li class="tag">{{ tag }}</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</aside>
+			{% endif %}
 		</div>
 	</div>
 	<div class="col12">

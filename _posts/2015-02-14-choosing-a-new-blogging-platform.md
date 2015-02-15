@@ -3,7 +3,7 @@ title: Choosing a New Blogging Platform
 author: Joachim van de Haterd
 layout: post
 category: "Technical thoughts"
-tags: CMS Joomla Jekyll
+tags: [CMS, Joomla, Jekyll]
 description: The road to a new blogging platform.
 ---
 Earlier this week, I wrote a slightly harsh [post](http://derjoachim.nl/blog/2015/02/10/joomla-is-the-emacs-of-cmss/) on why I stopped using Joomla for my personal blog. I still feel bad about it, even as a vim user. Emacs does not deserve that. Whereas the previous post was about my reasons for leaving Joomla, this post is about my choice for a new blogging platform.
