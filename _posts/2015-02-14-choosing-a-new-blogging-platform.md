@@ -18,7 +18,7 @@ I recently wrote a [guest blog](http://www.nooku.org/blog/2014/11/on-philosophy-
 
 ### Templating
 
-Initially, making a template looked slightly challenging. The Liquid templating engine is not too well documented. Stackoverflow was a godsend; all the undocumented features I needed, were explained thoroughly. With the right Sass framework, a few hours and a bit of elbow grease, I got further than I ever got with Bootstrap. IMHO, this website never looked better, and its codebase is quite efficient.
+Initially, making a template looked slightly challenging. The Liquid templating engine is not too well documented (or maybe I just didn't search properly, but that is obviously not my fault). Stackoverflow was a godsend; all the undocumented features I needed, were explained thoroughly. With the right Sass framework, a few hours and a bit of elbow grease, I got further than I ever got with Bootstrap. IMHO, this website never looked better, and its codebase is quite efficient.
 
 ### Import
 

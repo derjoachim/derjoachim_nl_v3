@@ -17,10 +17,6 @@
  **/
 .paginator {
 	$base-spacing: 1.5em !default;
-	$base-link-color: $link-color !default;
-	$dark-gray: #333 !default;
-	$large-screen: em(860) !default;
-	$base-font-color: $dark-gray !default;
 
 	@include media($mobile) {
 		@include span-columns(4);
@@ -43,9 +39,6 @@
 	}
   
 	$pagination-border: 1px solid $secondary-background-border-color;
-	$pagination-background: $secondary-background-color;
-	$pagination-hover-background: lighten($pagination-background, 5);
-	$pagination-color: $link-color;
 
 	text-align: center;
 
@@ -66,28 +59,28 @@
 				display: inline;
 			}
 
-			@include media($large-screen) {
+			@include media(min-width $tablet-size) {
 				display: inline;
 			}
 		}
 
 		li a {
 			@include transition (all 0.2s ease-in-out);
-			background: $pagination-background;
+			background: $secondary-background-color;
 			border-radius: $base-border-radius;
 			border: $pagination-border;
-			color: $pagination-color;
+			color: $link-color;
 			outline: none;
 			padding: ($base-spacing / 4) ($gutter / 2);
 
 			&:hover,
 			&:focus {
-				background: $pagination-hover-background;
+				background: lighten($secondary-background-color, 5);
 				color: darken($link-color,10);
 			}
 
 			&:active {
-				background: $pagination-background;
+				background: $secondary-background-color;
 			}
 		}
 
