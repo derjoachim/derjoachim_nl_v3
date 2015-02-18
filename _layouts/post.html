@@ -42,7 +42,7 @@ layout: default
 				<div class="sidebar-container">
 					<ul>
 						{% for tag in tags %}
-						<li class="tag">{{ tag }}</li>
+						<li class="tag"><a href="/tags/{{ tag }}.html">{{ tag }}</a></li>
 						{% endfor %}
 					</ul>
 				</div>

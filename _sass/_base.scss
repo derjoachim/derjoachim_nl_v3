@@ -55,6 +55,9 @@ figure {
  */
 div.container {
 	@include outer-container;
+	@include media(max-width $tablet-size) {
+		margin: 0 1em;
+	}
 	//border: 1px solid $background-color;
 	//box-shadow: 0 0 8px darken($background-color, 10%); // @TODO
 }

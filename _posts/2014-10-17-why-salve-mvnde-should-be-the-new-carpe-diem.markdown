@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The New 'CARPE DIEM'
-tags: [parenting, discovery]
+tags: [Parenting, Discovery]
 category: "Random thoughts"
 ---
 I am a bit jealous of my one year old son. Every day he keeps discovering things that have long been trivial for the adult world. He does this with a triumphant smile and welcomes his newfound knowledge with an abundance of joy. 17 months later, the text 'Hello World' that we sent to our friends and families appears to be spot on.

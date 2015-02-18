@@ -99,12 +99,14 @@
  */
 li.tag {
 	display: inline;
-	background: $secondary-background-color;
-	border-radius: $base-border-radius;
-	border:  1px solid $secondary-background-border-color;
-	color: $link-color;
-	outline: none;
-	padding: (1.5em / 4) ($gutter / 2);
+	a{
+		background: $secondary-background-color;
+		border-radius: $base-border-radius;
+		border:  1px solid $secondary-background-border-color;
+		color: $link-color;
+		outline: none;
+		padding: (1.5em / 4) ($gutter / 2);
+	}
 }
 
 /**
@@ -305,6 +307,9 @@ footer.site-footer {
 	background: $secondary-background-color;
 	div.footer-container {
 		@include outer-container;
+		@include media(max-width $tablet-size) {
+			margin: 0 0.5em;
+		}
 	}
 	
 	ul {

@@ -30,6 +30,8 @@ destination:      _gh_pages
 category_archive:
     path: "categories"
     slugify: true
+tag_page_layout: tag_archive
+tag_page_dir: tags
 
 # Blog
 permalink: "/blog/:year/:month/:day/:title"
