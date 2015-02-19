@@ -50,6 +50,26 @@ layout: default
 			{% endif %}
 		</div>
 	</div>
+    {% assign display-comments = true %}
+    {% if page.comments != null %}
+        {% assign display-comments = page.comments %}
+    {% endif %}
+    {% if display-comments %}
+    <div class="col12">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            var disqus_shortname = 'derjoachim';
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+    {% endif %}
 	<div class="col12">
 		<div class="paginator">
 			<ul>
