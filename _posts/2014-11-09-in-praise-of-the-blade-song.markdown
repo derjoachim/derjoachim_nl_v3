@@ -3,6 +3,7 @@ layout: post
 title: In Praise of the Blade Song
 category: Ramblings
 image: /assets/images/posts/misc/bladesong.jpg
+tags: [Shaving]
 ---
 ...or the case for traditional wet shaving
 

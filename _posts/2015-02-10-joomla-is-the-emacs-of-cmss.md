@@ -3,7 +3,7 @@ title: Joomla is the Emacs of CMSs
 author: Joachim van de Haterd
 layout: post
 category: Rants
-tags: Joomla CMS
+tags: [Joomla, CMS]
 description: Joomla is an awesome CMS, but it lacks a decent editor.
 ---
 Four years ago, when I started this blog, I chose to use Joomla. It has served me pretty well, but since version 3 was launched, some stuff started irritating me, most of all the actual content editing. 

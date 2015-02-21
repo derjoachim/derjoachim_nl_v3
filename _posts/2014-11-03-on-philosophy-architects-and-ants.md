@@ -4,6 +4,7 @@ author: Joachim van de Haterd
 layout: post
 category: Ramblings
 description: A report on the 2014 Nooku Jam in Leuven, Belgium.
+tags: [Nooku]
 ---
 
 On **29 &amp; 30 October 2014**, the yearly-ish Nooku Jam was held. The [Moyo Web Architects](http://www.moyoweb.nl/) team was there with a stronger presence than ever. As one of the organizers put it, we keep spawning. Five of us were there. Two of us did presentations and one of us tells his story. 

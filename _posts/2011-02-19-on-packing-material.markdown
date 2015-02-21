@@ -5,8 +5,7 @@ joomla_id: 10
 joomla_url: on-packing-material
 date: 2011-02-19 07:38:09.000000000 +01:00
 author: Joachim van de Haterd
-excerpt: "How much material do you need to ship a few pieces of copper wire? File
-  this one under 'curmudgeonery'."
+excerpt: "How much material do you need to ship a few pieces of copper wire? File this one under 'curmudgeonery'."
 category: Rants
 ---
 <p>How much material do you need to ship a few pieces of copper wire? File this one under <em>curmudgeonery</em>.</p>

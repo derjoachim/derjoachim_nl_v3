@@ -8,6 +8,7 @@ author: Joachim van de Haterd
 excerpt: "<p>Welcome to part two of our travels through the South. This ramble will
   be about two cities in Tennessee that are linked with music: Nashville and Memphis.</p>"
 category: Ramblings
+tags: [Travel]
 ---
 <p>Welcome to part two of our travels through the South. This ramble will be about two cities in Tennessee that are linked with music: Nashville and Memphis.</p>
 

@@ -6,6 +6,7 @@ joomla_url: travelling-in-the-deep-south-7-georgia
 date: 2011-10-01 15:22:44.000000000 +02:00
 author: Joachim van de Haterd
 category: Ramblings
+tags: [Travel]
 ---
 <p>After leaving the somewhat bland state of Florida, we returned to Georgia for the final leg of our journey. We instantly felt more at home. The plan was to visit Savannah, somehow spend our flexday and head back to Atlanta to return the Frankentaxi and fly back home.</p>
 

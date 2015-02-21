@@ -8,6 +8,7 @@ author: Joachim van de Haterd
 excerpt: "Here's part one of our adventures while travelling through the Southern
   US states. Y'all sit back and enjoy."
 category: Ramblings
+tags: [Travel]
 ---
 <p>Here's part one of our adventures while travelling through the Southern US states. Y'all sit back and enjoy.</p>
 

@@ -2,6 +2,7 @@
 title: A Quarter Turn of a Single Screw
 layout: post
 category: Ramblings
+tags: [Motorcycling, DIY]
 ---
 My motorcycle had some difficulty handling, so much even that in the winter weather, I was actually uncomfortable riding it. 
 

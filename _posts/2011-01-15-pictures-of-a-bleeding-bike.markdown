@@ -5,13 +5,13 @@ joomla_id: 8
 joomla_url: pictures-of-a-bleeding-bike
 date: 2011-01-15
 author: Joachim van de Haterd
-excerpt: "<p>People who actually talk to me in meatspace, already know this, but my
+excerpt: "People who actually talk to me in meatspace, already know this, but my
   motorbike is broken. My trusty BMW R1100RS died on me. As an aspiring mechanic with
   a modest set of tools, this was a nice challenge. My father helped me, for which
   I am very grateful. He has been a mechanic for about 40 years or so, but never specialized
-  in motorcycles.</p>\r\n<p>Read on and find out how (not?) to troubleshoot such a
-  problem.</p>"
+  in motorcycles."
 category: Ramblings
+tags: [Motorcycling, DIY] 
 ---
 <p>People who actually talk to me in meatspace, already know this, but my motorbike is broken. My trusty BMW R1100RS died on me. As an aspiring mechanic with a modest set of tools, this was a nice challenge. My father helped me, for which I am very grateful. He has been a mechanic for about 40 years or so, but never specialized in motorcycles.</p>
 <p>Read on and find out how (not?) to troubleshoot such a problem.</p>
@@ -59,7 +59,7 @@ category: Ramblings
 
 <p>With my electrical system being satisfactory, we were back at square one. My father had modified his vacuum meter and now it was long enough. 5 minutes later we had the answer. There was absolutely no compression in my cilinder.</p>
 
-<h3>Troubleshooting Pt. 5 - call the professionals&nbsp;</h3>
+<h3>Troubleshooting Pt. 5 - call the professionals</h3>
 
 <p>That made me bite the bullet and make a phone call to the garage. I had gambled and lost. Last week they took my bike to the workshop and I got the bad news call yesterday. An exhaust valve had burnt and broken. The mechanic was kind enough to show me what the problem was, so without further ado: here's the pictures. Warning: if you like motorbikes, these are not for the weak of heart:</p>
 

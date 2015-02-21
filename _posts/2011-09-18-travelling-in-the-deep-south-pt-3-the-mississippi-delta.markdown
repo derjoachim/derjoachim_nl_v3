@@ -9,6 +9,7 @@ excerpt: "Welcome to another installment of Joachim and Kim in the States. In th
   part we will venture deeper south and visit the states of Arkansas, Mississippi
   and Louisiana."
 category: Ramblings
+tags: [Travel]
 ---
 <p>Welcome to another installment of Joachim and Kim in the States. In this part we will venture deeper south and visit the states of Arkansas, Mississippi and Louisiana.</p>
 

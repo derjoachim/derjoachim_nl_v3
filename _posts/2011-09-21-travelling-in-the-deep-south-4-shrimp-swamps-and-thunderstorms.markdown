@@ -6,6 +6,7 @@ joomla_url: travelling-in-the-deep-south-4-shrimp-swamps-and-thunderstorms
 date: 2011-09-21 21:07:33.000000000 +02:00
 author: Joachim van de Haterd
 category: Ramblings
+tags: [Travel]
 ---
 <p>Follow us, intrepid travellers, deeper into the Louisiana wetlands as we approach the city of New Orleans.</p>
 

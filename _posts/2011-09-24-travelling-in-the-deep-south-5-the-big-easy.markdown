@@ -6,6 +6,7 @@ joomla_url: travelling-in-the-deep-south-5-the-big-easy
 date: 2011-09-24 11:59:14.000000000 +02:00
 author: Joachim van de Haterd
 category: Ramblings
+tags: [Travel]
 ---
 <p>So how about the sordid story of me running semi-naked and sweating heavily through Bourbon Street, which happens to be New Orleans's Red Light District? Read on...</p>
 

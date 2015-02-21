@@ -6,6 +6,7 @@ joomla_url: travelling-in-the-deep-south-6-florida
 date: 2011-09-27 13:19:20.000000000 +02:00
 author: Joachim van de Haterd
 category: Ramblings
+tags: [Travel]
 ---
 <p>We left New Orleans behind us, and moved on to the Sunshine State. Seldom have I seen such a dramatic difference between two adjacent states.</p>
 

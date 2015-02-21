@@ -6,6 +6,7 @@ joomla_url: ie6-countdown
 date: 2011-03-05 07:45:02.000000000 +01:00
 author: Joachim van de Haterd
 category: Technical thoughts
+tags: [Web development, Microsoft]
 ---
 Oooh! Here's a new one! Microsoft has launched a <a target="_blank" href="http://ie6countdown.com/">site</a> to keep people for using its own products! This calls&nbsp; for a rather old-fashioned rant! Old-fashioned in more ways than one I might add.
 
@@ -35,7 +36,7 @@ This one pisses me off most of all. This is Dumbness in Action. I know users who
 
 ### IT managers and bad programmers
 
-There are still people who want to support IE6, because of &nbsp;age-old web applications that otherwise would have to be rewritten. Why on earth did IT managers willinigly lock themselves in? There are way too many Mordacs in this world. If you do not know what I mean, open your favorite search engine and type in: Mordac, preventer of Technology.
+There are still people who want to support IE6, because of age-old web applications that otherwise would have to be rewritten. Why on earth did IT managers willinigly lock themselves in? There are way too many Mordacs in this world. If you do not know what I mean, open your favorite search engine and type in: Mordac, preventer of Technology.
 
 I know that programmers are lazy by nature. But why support only IE? You people make me hate my job. You make us look bad. Please find a different job.
 
