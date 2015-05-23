@@ -2,7 +2,7 @@
 title: Give Me a Few More Decades
 author: Joachim van de Haterd
 layout: post
-category: Ranmblings
+category: Ramblings
 ---
 
 Back when my grandmother and her siblings were still alive, my parents arranged a dinner for them. They sat next to each other and had over 240 years of memories to share. All they talked about, was the past, which makes sense. Having lived through a huge economic crisis and a World War, they had done their part. Soon, the world would go on without them and they were at peace with themselves. All that was left, was their long lives to reflect upon.
