@@ -21,7 +21,7 @@ markdown:         rdiscount
 highlighter:      pygments
   
 # Permalinks
-permalink:        pretty
+permalink:        "/blog/:year/:month/:day/:title.html"
    
 # Server
 destination:      _gh_pages
@@ -34,7 +34,7 @@ tag_page_layout: tag_archive
 tag_page_dir: tags
 
 # Blog
-permalink: "/blog/:year/:month/:day/:title"
+permalink: "/blog/:year/:month/:day/:title/"
 paginate: 8
 paginate_path: "/blog/page:num"
 
@@ -49,3 +49,4 @@ defaults:
 exclude: ['README.md','LICENSE']
 gems:
     - jekyll-sitemap
+    - jekyll-paginate
